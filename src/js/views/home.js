@@ -5,7 +5,7 @@ import "../../styles/home.css";
 export const Home = () => (
 	<div className="container">
 		{/* <!---heading----> */}
-		<header className="heading"> Registration-Form</header><hr></hr>
+		<header className="heading">Formulario de Registro</header><hr></hr>
 		{/* <!---Form starting----> */}
 		<div className="row ">
 			{/* <!--- For Name----> */}
