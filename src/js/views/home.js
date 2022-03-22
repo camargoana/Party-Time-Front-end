@@ -1,17 +1,19 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 
 export const Home = () => (
-	<div className="container">
+	<div className="container container-form">
 		{/* <!---heading----> */}
-		<header className="heading">Formulario de Registro</header><hr></hr>
+		<header className="heading">Planea tu pr&oacute;ximo evento</header>
+
+		<br/>
 		{/* <!---Form starting----> */}
 		<div className="row ">
 			{/* <!--- For Name----> */}
-			<div className="col-xs-4">
-				<label className="name">Name:</label> </div>
 			<div className="col-xs-8">
+				<label className="labelInput">Name*</label> 
+			</div>
+			<div className="col-xs-8 d-flex justify-content-center">
 				<input type="text" name="fname" id="fname" placeholder="Enter your First Name" className="form-control " />
 			</div>
 		</div>
@@ -19,9 +21,10 @@ export const Home = () => (
 			{/* <!-----For email----> */}
 			<div className="col-sm-12">
 				<div className="row">
-					<div className="col-xs-4">
-						<label className="mail" >Email:</label></div>
-					<div className="col-xs-8"	>
+					<div className="col-xs-8">
+						<label className="labelInput" >Email*</label>
+					</div>
+					<div className="col-xs-8 d-flex justify-content-center textInput">
 						<input type="email" name="email" id="email" placeholder="Enter your email" className="form-control" />
 					</div>
 				</div>
@@ -31,9 +34,10 @@ export const Home = () => (
 			{/* <!-----For Password and confirm password----> */}
 			<div className="col-sm-12">
 				<div className="row">
-					<div className="col-xs-4">
-						<label className="pass">Password:</label></div>
 					<div className="col-xs-8">
+						<label className="labelInput">Password*</label>
+					</div>
+					<div className="col-xs-8 d-flex justify-content-center textInput">
 						<input type="password" name="password" id="password" placeholder="Enter your Password" className="form-control" />
 					</div>
 				</div>
@@ -41,18 +45,17 @@ export const Home = () => (
 			{/* <!-----------For Type of user--------> */}
 			<div className="col-sm-12">
 				<div className="row">
-					<div className="col-xs-4 ">
-						<label className="gender">Type of user:</label>
+					<div className="col-12">
+						<label className="labelInput">Type of user</label>
 					</div>
-					<div className="col-xs-4 male">
-						<input type="radio" name="gender" id="gender" value="boy" />Personal
-					</div>
-					<div className="col-xs-4 female">
-						<input type="radio" name="gender" id="gender" value="girl" />Comercial
+					<div className="col-12 radioLabel">
+						<input type="radio" id="userType" value="personal" />&nbsp;&nbsp;Personal
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="userType" value="comercial" />&nbsp;&nbsp;Comercial
 					</div>
 				</div>
 				<div className="col-sm-12">
-					<div className="btn btn-warning">Submit</div>
+					<div className="btn btn-lg btn-submit">Submit</div>
 				</div>
 			</div>
 		</div>
