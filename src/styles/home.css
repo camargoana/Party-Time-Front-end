@@ -1,7 +1,7 @@
 /*-----Background-----*/
 
 body{
-    background-image:url(../img/fondo.jpg);
+    background-image:url(http://localhost:3000//fondo.jpg);
     background-repeat:no-repeat;
     background-size:cover;
     width:100%;
