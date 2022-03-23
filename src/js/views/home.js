@@ -1,14 +1,12 @@
 import React from "react";
 import "../../styles/home.css";
+import fondo from "../../img/fondo.jpg"
 
 export const Home = () => {
-	const myStyle={
-        backgroundImage: "url(fondo.jpg)",
-    };
 	return ( 
 	<div>
 		<div id="overlay"></div>
-		<div id="bg" style={myStyle}>
+		<div id="bg" style={{ backgroundImage: `url(${fondo})` }} >
 			<div className="container container-form">
 				{/* <!---heading----> */}
 				<header className="heading">Planea tu pr&oacute;ximo evento</header>
@@ -56,9 +54,9 @@ export const Home = () => {
 								<label className="labelInput">Type of user</label>
 							</div>
 							<div className="col-12 radioLabel">
-								<input type="radio" id="userType" value="personal" />&nbsp;&nbsp;Personal
+								<input type="radio" name="userType" value="personal" />&nbsp;&nbsp;Personal
 								&nbsp;&nbsp;&nbsp;&nbsp;
-								<input type="radio" id="userType" value="comercial" />&nbsp;&nbsp;Commercial
+								<input type="radio" name="userType" value="comercial" />&nbsp;&nbsp;Commercial
 							</div>
 						</div>
 						<div className="col-sm-12">
