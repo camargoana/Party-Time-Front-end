@@ -5,6 +5,7 @@ import "../../styles/navbar.css";
 export const Navbar = () => {
 	return (
 		<nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
+			
 			<div className="container-fluid">
 				<a className="navbar-brand" href="#"><img src="https://i.ibb.co/zbt990P/Party-Time.png" alt="Party-Time" border="0" width={'150'} height={'60'}></img></a>
 
@@ -15,7 +16,7 @@ export const Navbar = () => {
 					<div className="navbar-nav ms-auto mb-2 mb-lg-0">
 						<a className="nav-link active" aria-current="page" href="#">Categor&iacute;as</a>
 						<a className="nav-link active" aria-current="page" href="#">Favoritos</a>
-						<a className="nav-link active" aria-current="page" href="#">Contacto</a>
+						<a className="nav-link active" aria-current="page" href="#">Servicios</a>
 						<a className="nav-links nav-links-btn" href="#">Login</a>
 						<a className="nav-links nav-links-btn" href="#">Sign Up</a>
 						<a className="nav-links nav-links-btn" href="#">Log Out</a>
