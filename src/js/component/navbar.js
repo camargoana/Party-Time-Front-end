@@ -1,77 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/navbar.css";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top justify-content-evenly">
+		<nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
 			<div className="container-fluid">
-				<a className="navbar-brand" href="#">
-					Party Time
-				</a>
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation">
+				<a className="navbar-brand" href="#"><img src="https://i.ibb.co/zbt990P/Party-Time.png" alt="Party-Time" border="0" width={'150'} height={'60'}></img></a>
+
+				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div
-					className="navbar-right collapse navbar-collapse"
-				
-					id="navbarSupportedContent">
-					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-						<li className="nav-item">
-							<a
-								className="nav-link active"
-								aria-current="page"
-								href="#">
-								Home
-							</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#">
-								About
-							</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#">
-								Services
-							</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#">
-								Contact
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div
-					className="navbar-right collapse navbar-collapse"
-				
-					id="navbarSupportedContent">
-					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-						<li className="nav-item">
-							<a
-								className="nav-link active"
-								aria-current="page"
-								href="#">
-								Login
-							</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#">
-								Sign Up
-							</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#">
-								Log Out
-							</a>
-						</li>
-					</ul>
+				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div className="navbar-nav ms-auto mb-2 mb-lg-0">
+						<a className="nav-link active" aria-current="page" href="#">Categor&iacute;as</a>
+						<a className="nav-link active" aria-current="page" href="#">Favoritos</a>
+						<a className="nav-link active" aria-current="page" href="#">Contacto</a>
+						<a className="nav-links nav-links-btn" href="#">Login</a>
+						<a className="nav-links nav-links-btn" href="#">Sign Up</a>
+						<a className="nav-links nav-links-btn" href="#">Log Out</a>
+					</div>
 				</div>
 			</div>
 		</nav>
