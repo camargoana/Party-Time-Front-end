@@ -1,8 +1,9 @@
 import React from "react";
 import "../../styles/style.css";
 import fondo from "../../img/fondo2.jpg"
+import { Link } from "react-router-dom";
 
-export const Login = () => {
+export const SignIn = () => {
 	return ( 
 	<div>
 		<div id="overlay"></div>
@@ -34,14 +35,16 @@ export const Login = () => {
 							</div>
 						</div>
 					</div>
-					{/* <!-----------For Type of user--------> */}
-					<div className="col-sm-12">
-						<div className="col-sm-12">
-							<div className="btn btn-lg btn-submit">Sign In</div>
-						</div>
-                        <div className="col-sm-12">
-							<div className="btn btn-lg btn-submit">Sign Up</div>
-						</div>
+				</div>
+				<div className="row">
+					<div className="col-12">
+						<div className="btn btn-lg btn-submit">Sign In</div>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col-12 pt-4" >
+						<span className="labelInput">Does not have an account</span>
+						&nbsp;&nbsp;<Link to="/signup" >Create an account</Link>
 					</div>
 				</div>
 			</div>
