@@ -7,6 +7,7 @@ import { Signup } from "./views/signup";
 
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import { Login } from "./views/login";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -35,6 +36,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
+						</Route>
+						<Route exact path="/login">
+							<Login />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
