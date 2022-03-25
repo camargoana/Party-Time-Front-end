@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
+import { Signup } from "./views/signup";
+
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import { SignIn } from "./views/signin";
@@ -26,6 +28,9 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
+						</Route>
+						<Route exact path="/signup">
+							<Signup />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
