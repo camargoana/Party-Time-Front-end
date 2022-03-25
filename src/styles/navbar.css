@@ -21,17 +21,18 @@
     transition: all 0.2s ease-out;
 }
 .nav-links-btn{
+    background-color: transparent;
     padding: 10px 16px;
-  border: 2px solid;
-  border-radius: 30px;
-  font-weight: 600;
-  color: var(--primary);
-  cursor: pointer;
-  border-color: #fff76a;
-  color: var(--white);
-  margin: 1px 5px;
-  text-decoration: none;
-  width: 6rem;
+    border: 2px solid;
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    border-color: #fff76a;
+    color: var(--white);
+    margin: 1px 5px;
+    text-decoration: none;
+    width: 6rem;
 }
 .nav-links-btn:hover{
     background-color: transparent;
@@ -45,8 +46,7 @@
 .navbar .navbar-collapse {
     text-align: center;
     width: 50%;
-
-  }
+}
 
 .navbar .navbar-toggler[aria-expanded="true"] {
     color: var(--brightyellow)!important;
