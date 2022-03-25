@@ -17,7 +17,7 @@ export const Navbar = () => {
 						<a className="nav-link active" aria-current="page" href="#">Categor&iacute;as</a>
 						<a className="nav-link active" aria-current="page" href="#">Favoritos</a>
 						<a className="nav-link active" aria-current="page" href="#">Servicios</a>
-						<a className="nav-links nav-links-btn" href="#">Login</a>
+						<Link to="/login" className="nav-links nav-links-btn">Sign In</Link>
 						<a className="nav-links nav-links-btn" href="#">Sign Up</a>
 						<a className="nav-links nav-links-btn" href="#">Log Out</a>
 					</div>

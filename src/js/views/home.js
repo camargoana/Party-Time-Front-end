@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/home.css";
+import "../../styles/style.css";
 import fondo from "../../img/fondo.jpg"
 
 export const Home = () => {
@@ -7,7 +7,7 @@ export const Home = () => {
 	<div>
 		<div id="overlay"></div>
 		<div id="bg" style={{ backgroundImage: `url(${fondo})` }} >
-			<div className="container container-form">
+			<div className="container-home container-form">
 				{/* <!---heading----> */}
 				<header className="heading">Planea tu pr&oacute;ximo evento</header>
 
@@ -39,10 +39,10 @@ export const Home = () => {
 					{/* <!-----For Password and confirm password----> */}
 					<div className="col-sm-12">
 						<div className="row">
-							<div className="col-xs-8">
+							<div className="col-12">
 								<label className="labelInput">Password*</label>
 							</div>
-							<div className="col-xs-8 d-flex justify-content-center textInput">
+							<div className="col-12 d-flex justify-content-center textInput">
 								<input type="password" name="password" id="password" className="form-control" />
 							</div>
 						</div>

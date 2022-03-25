@@ -1,5 +1,9 @@
 /*-----Background-----*/
-
+*, *::after , *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body, html {
     height: 100%;
     overflow: hidden;
@@ -10,7 +14,7 @@ body, html {
     top: 0;
     width:100%;
     height: 100vh;
-    background-color: rgb(33,33,33,0.5);
+    background-color: rgb(33,33,33,0.02);
 }
 
 
@@ -23,10 +27,28 @@ body, html {
     overflow:auto;
 }
 
+.bg-general{
+    background-color: #daeaed !important;
+    width:100%;
+    height: 100vh;
+}
+
+
 /*-----for border----*/
-.container{
+.container-home{
     font-family:Roboto,sans-serif;
     background-image:url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg) ;
+    border-style: 1px solid grey;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0.8;
+    margin-top: 67px;
+    max-width: 600px;
+    padding-top: 10px;
+    margin-top: 166px;
+}
+.container-login{
+    font-family:Roboto,sans-serif;
     border-style: 1px solid grey;
     margin: 0 auto;
     text-align: center;
@@ -78,6 +100,15 @@ body, html {
     width: 200px;
     font-weight: bold;
     margin-top: 25px;
+}
+
+.btn-primary{
+    background-color:#044954;
+    width: 200px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #FFFFFF;
+    border:0px;
 }
 
 /*-------for email----------*/
