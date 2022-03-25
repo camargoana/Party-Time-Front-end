@@ -18,6 +18,15 @@ body, html {
 }
 
 
+
+#overlay-light{
+    position: absolute;
+    top: 0;
+    width:100%;
+    height: 100vh;
+    background-color: rgb(237 235 235 / 26%)
+}
+
 #bg{
     background-position: center;
     background-repeat:no-repeat;
@@ -35,6 +44,18 @@ body, html {
 
 
 /*-----for border----*/
+.container-intro{
+    font-family:Roboto,sans-serif;
+    border-style: 1px solid grey;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0.8;
+    margin-top: 67px;
+    max-width: 600px;
+    padding-top: 10px;
+    margin-top: 166px;
+}
+
 .container-home{
     font-family:Roboto,sans-serif;
     background-image:url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg) ;
