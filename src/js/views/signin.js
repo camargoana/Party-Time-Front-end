@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../../styles/style.css";
 import fondo from "../../img/fondo2.jpg"
+import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -10,28 +11,8 @@ export const Signin = () => {
 		email: "",
 		password: "",
 	});
+    const { store, actions } = useContext(Context);
 	const history = useHistory()
-	const logInUser = async (logUser) => {
-		const response = await fetch(
-			"http://127.0.0.1:5000/login",
-			{
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify(logUser)
-			}
-		)
-		const token = await response.json();
-		if (!response.ok) {
-			alert(`Fallo el logIN: ${response.status}: ${token.msg}`);
-			return false
-		}
-		else {
-			sessionStorage.Token = token
-			return true
-		}
-	}
 
 	return (
 		<div>
@@ -97,12 +78,12 @@ export const Signin = () => {
 										className="btn btn-lg btn-submit"
 										onClick={async (e) => {
 											// console.log(user)
-											const userLogged = await logInUser(logUser);
+											const userLogged = await actions.logInUser(logUser);
 											if (userLogged == true) {
 												history.push("/private")
 											}
 											else {
-												alert("Algo paso")
+												alert("Datos invalidos")
 											}
 											setLogUser({
 												email: "",
