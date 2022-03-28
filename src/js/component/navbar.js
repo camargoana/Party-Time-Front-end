@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
+import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../../styles/navbar.css";
 import logo from "../../img/logo-white.png"
 
 export const Navbar = () => {
-	const { store, actions } = useContext(Context);
 	const history = useHistory()
 	return (
 		<nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
@@ -20,32 +18,32 @@ export const Navbar = () => {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav ms-auto mb-2 mb-lg-0">
-						<a className="nav-link active" aria-current="page" href="#">Categor&iacute;as</a>
-						<a className="nav-link active" aria-current="page" href="#">Favoritos</a>
-						<a className="nav-link active" aria-current="page" href="#">Servicios</a>
-					</div>
-					<div>
-						{!store.token
-							? <div>
-								<Link to="/signin">
-									<button className="nav-links nav-links-btn" href="#">Sign In</button>
-								</Link>
-							</div>
-							: <div>
-								{/* <button className="nav-links nav-links-btn"> */}
-									<Link to="/private">
-										<i className="fa-solid fa-circle-user fa-2xl"></i>
+						<a className="nav-link active" aria-current="page" href="#">Categories</a>
+						<a className="nav-link active" aria-current="page" href="#">Favorites</a>
+						<a className="nav-link active" aria-current="page" href="#">Services</a>
+						<div>
+							{!sessionStorage.Token
+								? <div>
+									<Link to="/signin">
+										<button className="nav-links nav-links-btn" href="#">Sign In</button>
 									</Link>
-								{/* </button> */}
-								<button
-									className="nav-links nav-links-btn"
-									onClick={(e) => {
-										actions.deleteToken()
-										history.push("/")
-									}}
-								>Log Out</button>
-							</div>
-						}
+								</div>
+								: <div>
+									<button
+										className="nav-links nav-links-btn"
+										href="#"
+										onClick={async (e) => {
+											sessionStorage.Token = "";
+											history.push("/")
+											setLogUser({
+												email: "",
+												password: "",
+											})
+										}}
+									>Log Out</button>
+								</div>
+							}
+						</div>
 					</div>
 				</div>
 			</div>
