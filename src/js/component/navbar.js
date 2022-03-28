@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../../styles/navbar.css";
+import logo from "../../img/logo-white.png"
 
 export const Navbar = () => {
 	const history = useHistory()
@@ -8,8 +9,8 @@ export const Navbar = () => {
 		<nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
 
 			<div className="container-fluid">
-				<Link to="/">
-					<div className="navbar-brand" href="#"><img src="https://i.ibb.co/zbt990P/Party-Time.png" alt="Party-Time" border="0" width={'150'} height={'60'}></img></div>
+				<Link to="/" className="navbar-brand">
+					<img src={logo} alt="Party-Time" border="0" height="60px" style={{ marginTop: "-8px", marginBottom: "-8px" }} />
 				</Link>
 
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,15 +24,23 @@ export const Navbar = () => {
 						<div>
 							{!sessionStorage.Token
 								? <div>
-									<Link to="/login">
-										<button className="nav-links nav-links-btn" href="#">Login</button>
-									</Link>
-									<Link to="/signup">
-										<button className="nav-links nav-links-btn" href="#">Sign Up</button>
+									<Link to="/signin">
+										<button className="nav-links nav-links-btn" href="#">Sign In</button>
 									</Link>
 								</div>
 								: <div>
-									<button className="nav-links nav-links-btn" href="#">Log Out</button>
+									<button
+										className="nav-links nav-links-btn"
+										href="#"
+										onClick={async (e) => {
+											sessionStorage.Token = "";
+											history.push("/")
+											setLogUser({
+												email: "",
+												password: "",
+											})
+										}}
+									>Log Out</button>
 								</div>
 							}
 						</div>

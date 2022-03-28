@@ -1,19 +1,16 @@
 import React from "react";
-import "../../styles/home.css";
-import fondo from "../../img/fondo2.jpg"
+import "../../styles/style.css";
+import fondo from "../../img/intro.jpeg"
+import logo from "../../img/logo-black.png"
 
 export const Home = () => {
 	return ( 
 	<div>
-
-<div className="container">
-		<div className="row mt-5 mb-5">
-			<div className="col-md-12">
-				<h1 className="text-center">MÁS VISTOS</h1>
-				<i className="fa-solid fa-heart"></i>
+		<div id="overlay-light"></div>
+		<div id="bg" style={{ backgroundImage: `url(${fondo})` }} >
+			<div className="container-intro container-form">
+				<img src={logo} alt="Party-Time" border="0" height="250px" />
 			</div>
 		</div>
 	</div>
-	</div>
-)
-	}
+)}
