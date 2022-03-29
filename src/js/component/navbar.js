@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link, useHistory } from "react-router-dom";
 import "../../styles/navbar.css";
 import logo from "../../img/logo-white.png"
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	const history = useHistory()
 	return (
 		<nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
@@ -22,23 +24,21 @@ export const Navbar = () => {
 						<a className="nav-link active" aria-current="page" href="#">Favorites</a>
 						<a className="nav-link active" aria-current="page" href="#">Services</a>
 						<div>
-							{!sessionStorage.Token
+							{!store.token
 								? <div>
 									<Link to="/signin">
 										<button className="nav-links nav-links-btn" href="#">Sign In</button>
 									</Link>
 								</div>
 								: <div>
+									<Link to="/private">
+										<i className="fa-solid fa-circle-user fa-2xl"></i>
+									</Link>
 									<button
 										className="nav-links nav-links-btn"
-										href="#"
 										onClick={async (e) => {
-											sessionStorage.Token = "";
+											actions.deleteToken()
 											history.push("/")
-											setLogUser({
-												email: "",
-												password: "",
-											})
 										}}
 									>Log Out</button>
 								</div>

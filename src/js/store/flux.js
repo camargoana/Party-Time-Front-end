@@ -77,7 +77,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						headers: {
 							"Authorization": `Bearer ${store.token}`,
 						},
-		
 					}
 				);
 				const body = await response.json();

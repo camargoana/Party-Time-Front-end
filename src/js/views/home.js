@@ -62,7 +62,7 @@ export const Home = () => {
 					<div className="col-sm-3">
 						<div className="card">
 							<img
-								class="card-img-top"
+								className="card-img-top"
 								src="https://i.ibb.co/QjGFFtK/disco-hands.jpg"
 								alt="Card image cap"
 								height={235}
@@ -83,7 +83,7 @@ export const Home = () => {
 					<div className="col-sm-3">
 						<div className="card">
 							<img
-								class="card-img-top"
+								className="card-img-top"
 								src="https://i.ibb.co/d7BJLw0/disco-o.jpg"
 								alt="Card image cap"
 								height={235}
@@ -104,7 +104,7 @@ export const Home = () => {
 					<div className="col-sm-3">
 						<div className="card">
 							<img
-								class="card-img-top"
+								className="card-img-top"
 								src="https://i.ibb.co/KsrDwb2/dj.jpg"
 								alt="Card image cap"
 								height={235}
@@ -125,7 +125,7 @@ export const Home = () => {
 					<div className="col-sm-3">
 						<div className="card">
 							<img
-								class="card-img-top"
+								className="card-img-top"
 								src="https://i.ibb.co/d7BJLw0/disco-o.jpg"
 								alt="Card image cap"
 								height={235}
@@ -159,7 +159,7 @@ export const Home = () => {
 					<div className="col-sm-3">
 						<div className="card">
 							<img
-								class="card-img-top"
+								className="card-img-top"
 								src="https://i.ibb.co/QjGFFtK/disco-hands.jpg"
 								alt="Card image cap"
 								height={235}
@@ -180,7 +180,7 @@ export const Home = () => {
 					<div className="col-sm-3">
 						<div className="card">
 							<img
-								class="card-img-top"
+								className="card-img-top"
 								src="https://i.ibb.co/d7BJLw0/disco-o.jpg"
 								alt="Card image cap"
 								height={235}
@@ -201,7 +201,7 @@ export const Home = () => {
 					<div className="col-sm-3">
 						<div className="card">
 							<img
-								class="card-img-top"
+								className="card-img-top"
 								src="https://i.ibb.co/KsrDwb2/dj.jpg"
 								alt="Card image cap"
 								height={235}
@@ -222,7 +222,7 @@ export const Home = () => {
 					<div className="col-sm-3">
 						<div className="card">
 							<img
-								class="card-img-top"
+								className="card-img-top"
 								src="https://i.ibb.co/d7BJLw0/disco-o.jpg"
 								alt="Card image cap"
 								height={235}
