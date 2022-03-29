@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				)
 				const userToken = await response.json();
 				if (!response.ok) {
-					alert(`Fallo el logIN: ${response.status}: ${token.msg}`);
+					alert(`Fallo el logIN: ${response.status}: ${userToken.msg}`);
 					return false
 				}
 				else {
