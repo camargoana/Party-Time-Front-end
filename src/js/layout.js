@@ -5,6 +5,7 @@ import injectContext from "./store/appContext";
 import { Home } from "./views/home";
 import { Signin } from "./views/signin";
 import { Signup } from "./views/signup";
+import { EventForm } from "./views/eventForm";
 import { Private } from "./views/private";
 
 import { Navbar } from "./component/navbar";
@@ -35,6 +36,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/private">
 							<Private />
+						</Route>
+						<Route exact path="/eventForm">
+							<EventForm />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
