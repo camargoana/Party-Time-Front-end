@@ -11,7 +11,7 @@ export const Navbar = () => {
 		<nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
 
 			<div className="container-fluid">
-				<Link to="/home" className="navbar-brand">
+				<Link to="/" className="navbar-brand">
 					<img src={logo} alt="Party-Time" border="0" height="60px" style={{ marginTop: "-8px", marginBottom: "-8px" }} />
 				</Link>
 

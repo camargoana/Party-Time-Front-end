@@ -1,0 +1,73 @@
+*, *::after , *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/** CATEGORIES **/
+
+.parallax-party{
+    color: #f8f8f8 !important;
+    background: url("https://i.ibb.co/KsrDwb2/dj.jpg") no-repeat center center;
+}
+
+.parallax-restaurant{
+    color: #f8f8f8 !important;
+    background: url("https://i.ibb.co/KsrDwb2/dj.jpg") no-repeat center center;
+}
+
+.details-party{
+    color: #f8f8f8 !important;
+    background: url("https://i2.wp.com/files.123freevectors.com/wp-content/original/4329-dark-pink-bokeh-background.jpg?w=600") no-repeat center center;
+}
+
+.details-restaurant{
+    color: #020202 !important;
+    background: url("https://img.freepik.com/free-photo/wooden-board-empty-table-top-blurred-background_1253-1584.jpg?t=st=1648623250~exp=1648623850~hmac=603407e4fe3c14d85eb90127f280e3dadcd46bed3198fa64e4a6122b704bcccb&w=996") no-repeat center center;
+}
+
+.info-restaurant{
+    color: #0e0e0e !important;
+}
+
+.info-party{
+    color: #0e0e0e !important;
+}
+
+/** GENERAL **/
+.parallax{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 0px !important;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 700px;
+}
+
+.description{
+    background-color: black;
+    min-height: 400px;
+}
+
+.description-text{
+    font-size: 1.5rem;
+}
+
+.details-info{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 0px !important;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 600px;
+}
+
+.info-detail {
+    font-size: 1.5rem;
+}
+
+.info-detail span{
+    font-weight:bold;
+}
+
+

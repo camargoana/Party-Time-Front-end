@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 
@@ -23,9 +23,9 @@ export const Card = () => {
                         adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua.
                     </p>
-                    <a href="#" className="btn btn-info">
+                    <Link to="/party/1" className="btn btn-info">
                         Find Out More!
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
