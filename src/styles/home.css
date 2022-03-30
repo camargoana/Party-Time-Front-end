@@ -33,3 +33,7 @@
     border:0px;
     margin: auto;
 }
+
+.scroll-container {
+    scroll-behavior: smooth;
+}

@@ -2,12 +2,12 @@ import React from "react";
 import "../../styles/home.css";
 import fondo from "../../img/intro.jpeg"
 import logo from "../../img/logo-black.png"
+import { Card } from "../component/card";
 
 export const Home = () => {
 	return (
 		// PAGINA DE INICIO DE LA APLICACION (TIPO FEED DE EVENTOS DISPONIBLES)
-		<div>
-			<div id="overlay-light"></div>
+		<div className="position-relative">
 			<div id="bg" style={{ backgroundImage: `url(${fondo})` }} >
 				{/* <div classNameName="container-intro container-form">
 					<img src={logo} alt="Party-Time" border="0" height="250px" />
@@ -20,8 +20,10 @@ export const Home = () => {
 							<div className="carousel-caption d-none d-md-block">
 								<p className="slider-title">LOS MEJORES EVENTOS</p>
 								<p className="slider-text">REUNIDOS EN UN SOLO LUGAR</p>
-								<p className="buttob mt-5"> <a className="btn btn-lg btn-success">VER EVENTOS</a>&nbsp; &nbsp; <a
-									className="btn btn-danger btn-lg">PUBLICAR MI EVENTO</a></p>
+								<p className="mt-5">
+									<a className="btn btn-lg btn-success" href="#scrollToEvent">VER EVENTOS</a>&nbsp; &nbsp;
+									<a className="btn btn-danger btn-lg">PUBLICAR MI EVENTO</a>
+								</p>
 							</div>
 						</div>
 						{/* <div className="carousel-item">
@@ -49,17 +51,20 @@ export const Home = () => {
 				</div>
 
 				{/* TITULO */}
-				<div className="container-title">
-					<div className="row mt-5 mb-5">
-						<div className="col-md-12">
-							<h1 className="text-center">EVENTOS</h1>
-						</div>
-					</div>
+				<div className="scroll-container container-title" id="scrollToEvent">
+					<h1 className="text-center my-5">EVENTOS</h1>
 				</div>
 
 				{/* MAS VISTOS */}
-				<div className="row" id="fila-eventos">
-					<div className="col-sm-3">
+				<div className="row mb-5" id="fila-eventos">
+					{/* MAPEO DE TODOS LOS EVENTOS EXISTENTES */}
+					{/* <div className="d-flex flex-row flex-nowrap overflow-auto">
+						{context.store.events.map((event, index) => {
+							return <Card key={event.id} />
+						})}
+					</div> */}
+					<Card />
+					{/* <div className="col-sm-3">
 						<div className="card">
 							<img
 								className="card-img-top"
@@ -79,70 +84,7 @@ export const Home = () => {
 								</a>
 							</div>
 						</div>
-					</div>
-					<div className="col-sm-3">
-						<div className="card">
-							<img
-								className="card-img-top"
-								src="https://i.ibb.co/d7BJLw0/disco-o.jpg"
-								alt="Card image cap"
-								height={235}
-							/>
-							<div className="card-body">
-								<h5 className="card-title">Card Title</h5>
-								<p className="card-text">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.
-								</p>
-								<a href="#" className="btn btn-info">
-									Find Out More!
-								</a>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-3">
-						<div className="card">
-							<img
-								className="card-img-top"
-								src="https://i.ibb.co/KsrDwb2/dj.jpg"
-								alt="Card image cap"
-								height={235}
-							/>
-							<div className="card-body">
-								<h5 className="card-title">Card Title</h5>
-								<p className="card-text">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.
-								</p>
-								<a href="#" className="btn btn-info">
-									Find Out More!
-								</a>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-3">
-						<div className="card">
-							<img
-								className="card-img-top"
-								src="https://i.ibb.co/d7BJLw0/disco-o.jpg"
-								alt="Card image cap"
-								height={235}
-							/>
-							<div className="card-body">
-								<h5 className="card-title">Card Title</h5>
-								<p className="card-text">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.
-								</p>
-								<a href="#" className="btn btn-info">
-									Find Out More!
-								</a>
-							</div>
-						</div>
-					</div>
+					</div> */}
 				</div>
 
 				{/* TITULO2
@@ -155,93 +97,6 @@ export const Home = () => {
 				</div> */}
 
 				{/* MAS RECIENTES */}
-				<div className="row" id="fila-eventos">
-					<div className="col-sm-3">
-						<div className="card">
-							<img
-								className="card-img-top"
-								src="https://i.ibb.co/QjGFFtK/disco-hands.jpg"
-								alt="Card image cap"
-								height={235}
-							/>
-							<div className="card-body">
-								<h5 className="card-title">Card Title</h5>
-								<p className="card-text">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.
-								</p>
-								<a href="#" className="btn btn-info">
-									Find Out More!
-								</a>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-3">
-						<div className="card">
-							<img
-								className="card-img-top"
-								src="https://i.ibb.co/d7BJLw0/disco-o.jpg"
-								alt="Card image cap"
-								height={235}
-							/>
-							<div className="card-body">
-								<h5 className="card-title">Card Title</h5>
-								<p className="card-text">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.
-								</p>
-								<a href="#" className="btn btn-info">
-									Find Out More!
-								</a>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-3">
-						<div className="card">
-							<img
-								className="card-img-top"
-								src="https://i.ibb.co/KsrDwb2/dj.jpg"
-								alt="Card image cap"
-								height={235}
-							/>
-							<div className="card-body">
-								<h5 className="card-title">Card Title</h5>
-								<p className="card-text">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.
-								</p>
-								<a href="#" className="btn btn-info">
-									Find Out More!
-								</a>
-							</div>
-						</div>
-					</div>
-					<div className="col-sm-3">
-						<div className="card">
-							<img
-								className="card-img-top"
-								src="https://i.ibb.co/d7BJLw0/disco-o.jpg"
-								alt="Card image cap"
-								height={235}
-							/>
-							<div className="card-body">
-								<h5 className="card-title">Card Title</h5>
-								<p className="card-text">
-									Lorem ipsum dolor sit amet, consectetur
-									adipiscing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.
-								</p>
-								<a href="#" className="btn btn-info">
-									Find Out More!
-								</a> 
-							</div>
-						</div>
-					</div>
-				</div>
-
 				{/* TITULO
 				<div className="container-title">
 					<div className="row mt-5 mb-5">
@@ -250,9 +105,7 @@ export const Home = () => {
 						</div>
 					</div>
 				</div> */}
-
 			</div>
 		</div>
-
 	)
 }
