@@ -19,7 +19,7 @@ export const Signup = () => {
     return (
         <div>
             <div id="bg" style={{ backgroundImage: `url(${fondo})` }} >
-                <div className="container container-form mb-5">
+                <div className="container-signup container-form mb-5">
                     {/* <!---heading----> */}
                     <header className="heading">Planea tu pr&oacute;ximo evento</header>
                     <br />

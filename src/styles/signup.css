@@ -13,7 +13,6 @@ body, html {
     background-color: rgb(33,33,33,0.5);
 } */
 
-
 #bg{
     background-position: center;
     background-repeat:no-repeat;
@@ -24,7 +23,7 @@ body, html {
 }
 
 /*-----for border----*/
-.container{
+.container-signup{
     font-family:Roboto,sans-serif;
     background-image:url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg) ;
     border-style: 1px solid grey;

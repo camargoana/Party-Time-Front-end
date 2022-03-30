@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
@@ -22,9 +22,9 @@ export const Card = (event) => {
                     <p className="card-text">
                         {store.event.description}
                     </p>
-                    <a href="#" className="btn btn-info">
+                    <Link to="/party/1" className="btn btn-info">
                         Find Out More!
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

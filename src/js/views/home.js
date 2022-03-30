@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import fondo from "../../img/intro.jpeg"
+import fondo from "../../img/intro.jpg"
 import logo from "../../img/logo-black.png"
 import { Card } from "../component/card";
 import { Link, useHistory } from "react-router-dom";
@@ -13,7 +13,7 @@ export const Home = () => {
 	return (
 		// PAGINA DE INICIO DE LA APLICACION (TIPO FEED DE EVENTOS DISPONIBLES)
 		<div className="position-relative">
-			<div id="bg" style={{ backgroundImage: `url(${fondo})` }} >
+			<div id="bg-home" style={{ backgroundImage: `url(${fondo})` }} >
 				{/* <div classNameName="container-intro container-form">
 					<img src={logo} alt="Party-Time" border="0" height="250px" />
 				</div> */}
@@ -68,11 +68,11 @@ export const Home = () => {
 
 				{/* TITULO */}
 				<div className="scroll-container container-title" id="scrollToEvent">
-					<h1 className="text-center my-5">EVENTOS</h1>
+					<h1 className="text-center my-5 text-black">EVENTOS</h1>
 				</div>
 
 				{/* MAS VISTOS */}
-				<div className="row mb-5" id="fila-eventos">
+				<div className="row px-2 pb-5" id="fila-eventos">
 					{/* MAPEO DE TODOS LOS EVENTOS EXISTENTES */}
 					<div className="d-flex flex-row flex-nowrap overflow-auto">
 						{store.events.map((event, index) => {

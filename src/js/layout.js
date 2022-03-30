@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import injectContext from "./store/appContext";
 
 import { Home } from "./views/home";
+import { Event } from "./views/event";
 import { Signin } from "./views/signin";
 import { Signup } from "./views/signup";
 import { EventForm } from "./views/eventForm";
@@ -36,6 +37,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/private">
 							<Private />
+						</Route>
+						<Route exact path="/:resource/:id">
+							<Event />
 						</Route>
 						<Route exact path="/eventForm">
 							<EventForm />

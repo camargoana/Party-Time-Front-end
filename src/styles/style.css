@@ -27,13 +27,12 @@ body, html {
     background-color: rgba(237, 235, 235 ,0.26);
 } */
 
-#bg{
+#bg-home{
     background-position: center;
     background-repeat:no-repeat;
     background-size:cover;
     width:100%;
-    height: 100vh;
-    overflow:auto;
+    min-height: 100vh;
 }
 
 .bg-general{
@@ -188,6 +187,10 @@ margin-top: 6px;
     font-size: 16px;
     margin-top: 9px;
 } 
+
+.footer{
+    background-color: #000000;
+}
 
 .footerLabel{
     color: white;
