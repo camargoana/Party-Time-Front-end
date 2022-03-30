@@ -16,9 +16,8 @@ export const Signin = () => {
 
 	return (
 		<div>
-			{/* <div id="overlay"></div> */}
 			<div id="bg" style={{ backgroundImage: `url(${fondo})` }} >
-				<div className="container-home container-form">
+				<div className="container-home container-form mb-5">
 					{/* <!---heading----> */}
 					<header className="heading">Login</header>
 					<div>

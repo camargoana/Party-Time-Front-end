@@ -25,3 +25,18 @@
     border:0px;
     margin: auto;
 }
+<<<<<<< HEAD
+=======
+.btn-light{
+    background-color:#ffee00;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #FFFFFF;
+    border:0px;
+    margin: auto;
+}
+
+.scroll-container {
+    scroll-behavior: smooth;
+}
+>>>>>>> d1bd3f040bafb6fa91ed90b0063516f0899d1857
