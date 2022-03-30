@@ -1,0 +1,31 @@
+.container-form{
+    font-family:Roboto,sans-serif;
+    background-image:url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg) ;
+    border-style: 1px solid grey;
+    margin: 0 auto;
+    opacity: 0.8;
+    max-width: 626px;
+    padding-top: 10px;
+    margin-top: 80px;
+    color: white;
+}
+.form-control-name{
+    width: 70%;
+    background: transparent;
+    color: #fff;
+}
+.name{
+width: -webkit-fill-available;
+}
+.description{
+    width: -webkit-fill-available;
+}
+input[type="time"]::-webkit-calendar-picker-indicator{
+    filter: invert(99%) sepia(35%) saturate(2255%) hue-rotate(331deg) brightness(101%) contrast(116%);
+  }
+input[type="date"]::-webkit-calendar-picker-indicator{
+    filter: invert(99%) sepia(35%) saturate(2255%) hue-rotate(331deg) brightness(101%) contrast(116%);
+  }
+.button-center{
+    text-align: center;
+}

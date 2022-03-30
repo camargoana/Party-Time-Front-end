@@ -6,6 +6,7 @@ import { Home } from "./views/home";
 import { Event } from "./views/event";
 import { Signin } from "./views/signin";
 import { Signup } from "./views/signup";
+import { EventForm } from "./views/eventForm";
 import { Private } from "./views/private";
 
 import { Navbar } from "./component/navbar";
@@ -39,6 +40,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/:resource/:id">
 							<Event />
+						</Route>
+						<Route exact path="/eventForm">
+							<EventForm />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
