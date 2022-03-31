@@ -10,7 +10,6 @@ import { Link, useHistory } from "react-router-dom";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 	const history = useHistory()
-	actions.getEvents()
 	return (
 		// PAGINA DE INICIO DE LA APLICACION (TIPO FEED DE EVENTOS DISPONIBLES)
 		<div className="position-relative">
