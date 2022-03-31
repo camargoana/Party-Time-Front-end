@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/event.css";
 
 export const Event = () => {
+	
 
 	// DATABASE INFO
 	const eventType = "diversion";
@@ -93,6 +94,11 @@ export const Event = () => {
 						</div>
 						<br /><br />
 					</div>
+				</div>
+			</section>
+			<section>
+				<div id="mapContainer">
+					<div id="map"></div>
 				</div>
 			</section>
 		</div>

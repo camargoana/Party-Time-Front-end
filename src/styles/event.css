@@ -69,6 +69,15 @@
 
 
 /** GENERAL **/
+#mapContainer{
+    min-height: 400px;
+}
+
+#map{
+    height: 400px;
+    width: 100%;
+}
+
 .parallax{
     padding-top: 50px;
     padding-bottom: 50px;
