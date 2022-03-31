@@ -4,7 +4,7 @@ import "../../styles/event.css";
 export const Event = () => {
 
 	// DATABASE INFO
-	const resource = "party";
+	const eventType = "diversion";
 	const eventName = "Event Name";
 	const datetime = "April 21, 2022 - 8pm";
 	const description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -16,27 +16,32 @@ export const Event = () => {
 	const contact = "(+58)000-00-00";
 
 	// CALCULATED INFO
-	let eventType = "Event Type";
+	let resource = "";
+	let eventTypeDesc = "Event Type";
 	let descriptionTitle = "Description Title";
 	let detailsTitle = "Event Details";
-	switch (resource) {
-		case 'party':
-			eventType = "Musical Event";
+	switch (eventType) {
+		case 'fiesta':
+			resource = 'party';
+			eventTypeDesc = "Musical Event";
 			descriptionTitle = "Don't Miss This Event";
 			detailsTitle = "Event details";
 			break;
-		case 'restaurant':
-			eventType = "Restaurant";
+		case 'restaurante':
+			resource = 'restaurant';
+			eventTypeDesc = "Restaurant";
 			descriptionTitle = "Don't Miss This Place";
 			detailsTitle = "Place details";
 			break;
 		case 'diversion':
-			eventType = "Diversion Event";
+			resource = 'diversion';
+			eventTypeDesc = "Diversion Event";
 			descriptionTitle = "Don't Miss This Opportunity";
 			detailsTitle = "Event details";
 			break;
-		case 'disco':
-			eventType = "Disco place";
+		case 'discoteca':
+			resource = 'disco';
+			eventTypeDesc = "Disco place";
 			descriptionTitle = "Don't Miss This Amazing Time";
 			detailsTitle = "Disco details";
 			break;
@@ -49,7 +54,7 @@ export const Event = () => {
 				<div className={`parallax parallax-${resource}`}>
 					<div className="mx-5">
 						<br /><br /><br /><br /><br /><br /><br /><br /><br />
-						<h1 className="display-3 ms-5 fw-bolder">{eventType.toUpperCase()}</h1>
+						<h1 className="display-3 ms-5 fw-bolder">{eventTypeDesc.toUpperCase()}</h1>
 						<h1 className="display-6 ms-5 fw-bold fst-italic mt-5">{eventName}</h1>
 						<h1 className="display-6 ms-5 fw-normal fst-italic">{datetime}</h1>
 						<br /><br />
@@ -77,7 +82,7 @@ export const Event = () => {
 								<img className="img-fluid" src="https://images.squarespace-cdn.com/content/v1/551e1babe4b0aa77af01e45f/1429734404086-OAWOO1Y07LMCDBF859MR/San_Diego_Event_Dj_David_Cutler.jpg?format=1500w" />
 							</div>
 							<div className={`col-12 col-lg-6 mt-5 px-5 info-detail info-${resource}`} >
-								<p><span>Type:</span> {eventType}</p>
+								<p><span>Type:</span> {eventTypeDesc}</p>
 								<p><span>Title:</span> {eventName}</p>
 								<p><span>Datetime:</span> {datetime}</p>
 								<p><span>Capacity:</span> {capacity}</p>
