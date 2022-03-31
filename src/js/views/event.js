@@ -1,17 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import "../../styles/event.css";
 
 export const Event = () => {
-	const params = useParams();
-
-	console.log("resource "+params.resource);
-	console.log("id "+params.id);
 
 	return (
 		<div>
 			<section>
-				<div className={`parallax parallax-${params.resource}`}>
+				<div className={`parallax parallax-party`}>
 					<div className="mx-5">
 						<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 						<h1 className="display-3 ms-5 fw-bolder">MUSICAL EVENT</h1>
@@ -34,7 +29,7 @@ export const Event = () => {
 				</div>
 			</section>
 			<section>
-				<div className={`details-info details-${params.resource}`}>
+				<div className={`details-info details-party`}>
 					<div className="container">
 						<br/><br/>
 						<h1 className="display-5 text-center fw-bold">Event details</h1>
@@ -43,7 +38,7 @@ export const Event = () => {
 							<div className="col-6 px-5">
 								<img className="img-fluid" src="https://images.squarespace-cdn.com/content/v1/551e1babe4b0aa77af01e45f/1429734404086-OAWOO1Y07LMCDBF859MR/San_Diego_Event_Dj_David_Cutler.jpg?format=1500w" />
 							</div>
-							<div className={`col-6 px-5 info-detail info-${params.resource}`} >
+							<div className={`col-6 px-5 info-detail info-party`} >
 								<p><span>Type:</span> Music event</p>
 								<p><span>Title:</span> Live rocking music</p>
 								<p><span>Datetime:</span> April 21, 2022 - 8pm</p>

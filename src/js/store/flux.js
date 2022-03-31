@@ -9,6 +9,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 				type_of_user: ""
 			},
 			token: sessionStorage.getItem("Token"),
+			events:[],
+			event: {
+				event_name: "",
+				local_name: "",
+				type_of_event: "",
+				description: "",
+				place: "",
+				date: "",
+				start_time: "",
+				end_time: "",
+				age: "",
+				parking: "",
+				number: "",
+				capacity: "",
+				photo: "",
+				location: "",
+				cover: "",
+				email: ""
+			}
 		},
 
 		actions: {
@@ -60,7 +79,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			deleteToken: ()=>{
+			deleteToken: () => {
 				// const store = getStore()
 				sessionStorage.removeItem("Token")
 				setStore({
@@ -82,6 +101,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const body = await response.json();
 				setStore({
 					user: body,
+				});
+			},
+
+			createEvent: async (event) => {
+				const store = getStore();
+				const response = await fetch(
+					`${store.baseURL}/event`,
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(event)
+					}
+				);
+				const body = await response.json();
+				if (!response.ok) {
+					alert(`Fallo la creacion de evento: ${response.status}: ${body.msg}`);
+					return false
+				}
+				else {
+					return (true)
+				}
+			},
+
+			getEvents: async () => {
+				const store = getStore();
+				const response = await fetch(
+					`${store.baseURL}/events`,
+				);
+				const body = await response.json();
+				setStore({
+					events: body,
 				});
 			},
 		}

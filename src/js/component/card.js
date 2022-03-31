@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import PropTypes from "prop-types";
 
 
-export const Card = () => {
+export const Card = ({event}) => {
     const { store, actions } = useContext(Context);
     const history = useHistory();
 
@@ -17,13 +18,13 @@ export const Card = () => {
                     height={235}
                 />
                 <div className="card-body">
-                    <h5 className="card-title">Card Title</h5>
+                    <h5 className="card-title">
+                        {event.event_name}
+                    </h5>
                     <p className="card-text">
-                        Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua.
+                        {event.description}
                     </p>
-                    <Link to="/party/1" className="btn btn-info">
+                    <Link to="/event" className="btn btn-info">
                         Find Out More!
                     </Link>
                 </div>
@@ -31,3 +32,7 @@ export const Card = () => {
         </div>
     )
 }
+
+Card.propTypes = {
+    event: PropTypes.object,
+};

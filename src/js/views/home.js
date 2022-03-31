@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import fondo from "../../img/intro.jpg"
 import logo from "../../img/logo-black.png"
 import { Card } from "../component/card";
+import { Link, useHistory } from "react-router-dom";
+
 
 export const Home = () => {
+	const { store, actions } = useContext(Context);
+	const history = useHistory()
 	return (
 		// PAGINA DE INICIO DE LA APLICACION (TIPO FEED DE EVENTOS DISPONIBLES)
 		<div className="position-relative">
@@ -22,7 +27,18 @@ export const Home = () => {
 								<p className="slider-text">REUNIDOS EN UN SOLO LUGAR</p>
 								<p className="mt-5">
 									<a className="btn btn-lg btn-success" href="#scrollToEvent">VER EVENTOS</a>&nbsp; &nbsp;
-									<a className="btn btn-danger btn-lg">PUBLICAR MI EVENTO</a>
+									<a 
+										className="btn btn-danger btn-lg"
+										onClick={(e)=>{
+											!store.token
+											? history.push("/signin")
+											: (
+												store.user.type_of_user == "comercial"
+												? history.push("/eventForm")
+												: alert("Debes registrarte como usuario comercial para poder crear y publicar tu evento")
+											)
+										}}
+										>PUBLICAR MI EVENTO</a>
 								</p>
 							</div>
 						</div>
@@ -58,12 +74,12 @@ export const Home = () => {
 				{/* MAS VISTOS */}
 				<div className="row px-2 pb-5" id="fila-eventos">
 					{/* MAPEO DE TODOS LOS EVENTOS EXISTENTES */}
-					{/* <div className="d-flex flex-row flex-nowrap overflow-auto">
-						{context.store.events.map((event, index) => {
-							return <Card key={event.id} />
+					<div className="d-flex flex-row flex-nowrap overflow-auto">
+						{store.events.map((event, index) => {
+							return <Card key={event.id} event={event} />
 						})}
-					</div> */}
-					<Card />
+					</div>
+					{/* <Card /> */}
 					{/* <div className="col-sm-3">
 						<div className="card">
 							<img

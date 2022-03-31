@@ -36,9 +36,9 @@ export const Navbar = () => {
 									</Link>
 									<button
 										className="nav-links nav-links-btn"
-										onClick={async (e) => {
+										onClick={(e) => {
 											actions.deleteToken()
-											history.push("/home")
+											history.push("/")
 										}}
 									>Log Out</button>
 								</div>
