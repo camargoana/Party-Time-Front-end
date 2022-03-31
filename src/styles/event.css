@@ -4,21 +4,26 @@
     box-sizing: border-box;
 }
 
-/** CATEGORIES **/
+/** GENERIC PARTY **/
 
 .parallax-party{
     color: #f8f8f8 !important;
     background: url("https://i.ibb.co/KsrDwb2/dj.jpg") no-repeat center center;
 }
 
-.parallax-restaurant{
-    color: #f8f8f8 !important;
-    background: url("https://i.ibb.co/KsrDwb2/dj.jpg") no-repeat center center;
+.details-party{
+    color: #0e0e0e !important;
+    background: url("https://i2.wp.com/files.123freevectors.com/wp-content/original/4329-dark-pink-bokeh-background.jpg?w=600") no-repeat center center;
 }
 
-.details-party{
-    color: #f8f8f8 !important;
-    background: url("https://i2.wp.com/files.123freevectors.com/wp-content/original/4329-dark-pink-bokeh-background.jpg?w=600") no-repeat center center;
+.info-party{
+    color: #0e0e0e !important;
+}
+
+/** GENERIC RESTAURANT **/
+.parallax-restaurant{
+    color: #000000 !important;
+    background: url("https://wallpaperaccess.com/full/3353899.jpg") no-repeat center center;
 }
 
 .details-restaurant{
@@ -30,9 +35,38 @@
     color: #0e0e0e !important;
 }
 
-.info-party{
-    color: #0e0e0e !important;
+/** GENERIC DIVERSION **/
+
+.parallax-diversion{
+    color: #000000 !important;
+    background: url("https://cdn.pixabay.com/photo/2013/04/11/19/46/building-102840_960_720.jpg") no-repeat center center;
 }
+
+.details-diversion{
+    color: #020202 !important;
+    background: url("https://cdn.pixabay.com/photo/2020/07/10/12/08/hot-air-balloon-5390487_960_720.jpg") no-repeat center center;
+}
+
+.info-diversion{
+    color: #000000 !important;
+}
+
+/** GENERIC DISCO **/
+
+.parallax-disco{
+    color: #000000 !important;
+    background: url("https://cdn.pixabay.com/photo/2021/09/03/08/00/cd-6595247_960_720.jpg") no-repeat center center;
+}
+
+.details-disco{
+    color: white !important;
+    background: url("https://cdn.pixabay.com/photo/2018/02/26/10/12/christmas-3182684_960_720.jpg") no-repeat center center;
+}
+
+.info-disco{
+    color: white !important;
+}
+
 
 /** GENERAL **/
 .parallax{
