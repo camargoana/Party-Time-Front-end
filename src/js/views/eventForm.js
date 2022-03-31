@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/eventForm.css";
-import fondo from "../../img/intro.jpg"
+
 
 export const EventForm = () => {
     const { store, actions } = useContext(Context);

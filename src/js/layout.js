@@ -12,6 +12,7 @@ import { Private } from "./views/private";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import ScrollToTop from "./component/scrollToTop";
+import { Categories } from "./views/categories";
 
 
 //create your first component
@@ -43,6 +44,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/eventForm">
 							<EventForm />
+						</Route>
+						<Route exact path="/categories">
+							<Categories />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
