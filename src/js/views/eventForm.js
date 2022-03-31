@@ -2,12 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/eventForm.css";
-import fondo from "../../img/fondo.jpg"
+import fondo from "../../img/intro.jpg"
 
 export const EventForm = () => {
     return (
         <div>
-            <div className="container-form">
+            <div id="bg-form"  >
+            <div className="container-form mb-2">
                 <h1 className="center">Datos del Evento</h1>
                 <div className="col-lg-12 well">
                     <div className="row">
@@ -171,7 +172,7 @@ export const EventForm = () => {
                                         <input type="text" placeholder="# de personas permitidas..." className="form-control name"></input>
                                     </div>
                                     <div className="col-sm-3 form-group">
-                                        <label>Cover</label>
+                                        <label>Cover ($)</label>
                                         <input type="text" placeholder="Precio en $..." className="form-control name"></input>
                                     </div>
                                     <div className="col-sm-6 form-group">
@@ -179,13 +180,14 @@ export const EventForm = () => {
                                         <input type="text" placeholder="Enlace de la imagen..." className="form-control name"></input>
                                     </div>
                                 </div>
-
+                                <h1 className="center mt-2">Datos de contacto</h1>
+                                <p>Ingresa un n&uacute;mero de tel&eacute;fono y un correo electr&oacute;nico para que los asistentes puedan hacer reservaciones o aclarar cualquier duda.</p>
                                 <div className="form-group mt-1">
                                     <label>N&uacute;mero de contacto</label>
                                     <input type="text" placeholder="Ingresa n&uacute;mero de tel&eacute;fono..." className="form-control"></input>
                                 </div>
                                 <div className="form-group mt-1">
-                                    <label>Correo Electr&oacute;nico</label>
+                                    <label>Correo electr&oacute;nico de contacto</label>
                                     <input type="text" placeholder="Ingresa correo electr&oacute;nico..." className="form-control"></input>
                                 </div>
                                 <div className="col-sm-12 button-center">
@@ -195,6 +197,7 @@ export const EventForm = () => {
                         </form>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     )
