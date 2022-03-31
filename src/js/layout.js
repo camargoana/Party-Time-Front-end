@@ -38,7 +38,7 @@ const Layout = () => {
 						<Route exact path="/private">
 							<Private />
 						</Route>
-						<Route exact path="/:resource/:id">
+						<Route exact path="/event">
 							<Event />
 						</Route>
 						<Route exact path="/eventForm">

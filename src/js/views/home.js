@@ -10,6 +10,7 @@ import { Link, useHistory } from "react-router-dom";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 	const history = useHistory()
+	actions.getEvents()
 	return (
 		// PAGINA DE INICIO DE LA APLICACION (TIPO FEED DE EVENTOS DISPONIBLES)
 		<div className="position-relative">
@@ -76,7 +77,7 @@ export const Home = () => {
 					{/* MAPEO DE TODOS LOS EVENTOS EXISTENTES */}
 					<div className="d-flex flex-row flex-nowrap overflow-auto">
 						{store.events.map((event, index) => {
-							return <Card key={event.id} />
+							return <Card key={event.id} event={event} />
 						})}
 					</div>
 					{/* <Card /> */}

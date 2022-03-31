@@ -5,8 +5,8 @@ import "../../styles/eventForm.css";
 import fondo from "../../img/fondo.jpg"
 
 export const EventForm = () => {
-	const { store, actions } = useContext(Context);
-	const history = useHistory()
+    const { store, actions } = useContext(Context);
+    const history = useHistory()
     const [event, setEvent] = useState({
         event_name: "",
         local_name: "",
@@ -127,99 +127,26 @@ export const EventForm = () => {
                                 <div className="row">
                                     <div className="col-sm-6 mt-1">
                                         <label>Tipo de evento</label>
-                                        <select className="form-select" aria-label="Default select example">
-                                            <option disabled>Selecciona tu opci&oacute;n</option>
+                                        <select
+                                            defaultValue={""}
+                                            className="form-select"
+                                            aria-label="Default select example"
+                                            onChange={(e) => setEvent((prev) => ({
+                                                ...prev,
+                                                type_of_event: e.target.value
+                                            }))}>
+                                            <option disabled value={""}>Selecciona tu opci&oacute;n</option>
                                             <option
                                                 value="fiesta"
-                                                onSelect={(e) => {
-                                                    setEvent({
-                                                        event_name: event.event_name,
-                                                        local_name: event.local_name,
-                                                        type_of_event: "fiesta",
-                                                        description: event.description,
-                                                        place: event.place,
-                                                        date: event.date,
-                                                        start_time: event.start_time,
-                                                        end_time: event.end_time,
-                                                        age: event.age,
-                                                        parking: event.parking,
-                                                        number: event.number,
-                                                        capacity: event.capacity,
-                                                        photo: event.photo,
-                                                        location: event.location,
-                                                        cover: event.cover,
-                                                        email: event.email
-                                                    })
-                                                }}
                                             >Fiesta</option>
                                             <option
                                                 value="restaurante"
-                                                onChange={(e) => {
-                                                    setEvent({
-                                                        event_name: event.event_name,
-                                                        local_name: event.local_name,
-                                                        type_of_event: e.target.value,
-                                                        description: event.description,
-                                                        place: event.place,
-                                                        date: event.date,
-                                                        start_time: event.start_time,
-                                                        end_time: event.end_time,
-                                                        age: event.age,
-                                                        parking: event.parking,
-                                                        number: event.number,
-                                                        capacity: event.capacity,
-                                                        photo: event.photo,
-                                                        location: event.location,
-                                                        cover: event.cover,
-                                                        email: event.email
-                                                    })
-                                                }}
                                             >Restaurante</option>
                                             <option
                                                 value="diversion"
-                                                onChange={(e) => {
-                                                    setEvent({
-                                                        event_name: event.event_name,
-                                                        local_name: event.local_name,
-                                                        type_of_event: e.target.value,
-                                                        description: event.description,
-                                                        place: event.place,
-                                                        date: event.date,
-                                                        start_time: event.start_time,
-                                                        end_time: event.end_time,
-                                                        age: event.age,
-                                                        parking: event.parking,
-                                                        number: event.number,
-                                                        capacity: event.capacity,
-                                                        photo: event.photo,
-                                                        location: event.location,
-                                                        cover: event.cover,
-                                                        email: event.email
-                                                    })
-                                                }}
                                             >Diversi&oacute;n</option>
                                             <option
                                                 value="discoteca"
-                                                onChange={(e) => {
-                                                    setEvent({
-                                                        event_name: event.event_name,
-                                                        local_name: event.local_name,
-                                                        type_of_event: e.target.value,
-                                                        description: event.description,
-                                                        place: event.place,
-                                                        date: event.date,
-                                                        start_time: event.start_time,
-                                                        end_time: event.end_time,
-                                                        age: event.age,
-                                                        parking: event.parking,
-                                                        number: event.number,
-                                                        capacity: event.capacity,
-                                                        photo: event.photo,
-                                                        location: event.location,
-                                                        cover: event.cover,
-                                                        email: event.email
-                                                    })
-                                                }}
                                             >Discoteca</option>
                                         </select>
                                     </div>

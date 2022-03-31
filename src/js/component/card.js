@@ -4,25 +4,27 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
 
-export const Card = (event) => {
+export const Card = ({event}) => {
     const { store, actions } = useContext(Context);
     const history = useHistory();
 
     return (
         <div className="col-sm-3">
             <div className="card">
-                {/* <img
+                <img
                     className="card-img-top"
-                    src={store.event.photo}
+                    src="https://i.ibb.co/QjGFFtK/disco-hands.jpg"
                     alt="Card image cap"
                     height={235}
-                /> */}
+                />
                 <div className="card-body">
-                    <h5 className="card-title">{event.name}</h5>
+                    <h5 className="card-title">
+                        {event.event_name}
+                    </h5>
                     <p className="card-text">
-                        {store.event.description}
+                        {event.description}
                     </p>
-                    <Link to="/party/1" className="btn btn-info">
+                    <Link to="/event" className="btn btn-info">
                         Find Out More!
                     </Link>
                 </div>
