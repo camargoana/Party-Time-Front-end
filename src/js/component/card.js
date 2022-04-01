@@ -24,7 +24,7 @@ export const Card = ({event}) => {
                     <p className="card-text">
                         {event.description}
                     </p>
-                    <Link to="/event" className="btn btn-info">
+                    <Link to = {`/event/${event.id}`} className="btn btn-info">
                         Find Out More!
                     </Link>
                 </div>

@@ -1,47 +1,69 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/event.css";
+import { useParams } from "react-router-dom";
 
 export const Event = () => {
+<<<<<<< HEAD
 	
 
+=======
+	const { store, actions } = useContext(Context);
+	const params = useParams();
+	useEffect(() => {
+		if (params.id) {
+			actions.getEventDetails(params.id)
+		}
+	}, [])
+>>>>>>> 1d1307e757c691fdf94943af03fa0145f44be315
 	// DATABASE INFO
-	const eventType = "diversion";
-	const eventName = "Event Name";
-	const datetime = "April 21, 2022 - 8pm";
-	const description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-		+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-		+ ", when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
-	const capacity = "4.000 people";
-	const minAge = "21 years old";
-	const parking = "Yes, there is!";
-	const contact = "(+58)000-00-00";
+	// const eventType = "diversion";
+	// const eventName = "Event Name";
+	// const datetime = "April 21, 2022 - 8pm";
+	// const description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+	// 	+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+	// 	+ ", when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+	// const capacity = "4.000 people";
+	// const minAge = "21 years old";
+	// const parking = "Yes, there is!";
+	// const contact = "(+58)000-00-00";
+
+	const eventType = store.eventDetails.type_of_event;
+	const eventName = store.eventDetails.event_name;
+	const datetime = store.eventDetails.date;
+	const description = store.eventDetails.description;
+	const capacity = store.eventDetails.capacity;
+	const minAge = store.eventDetails.age;
+	const parking = store.eventDetails.parking;
+	const contact = store.eventDetails.number;
+	const cover = store.eventDetails.cover;
 
 	// CALCULATED INFO
-	let resource = "";
+	let resource = store.eventDetails.type_of_event;
 	let eventTypeDesc = "Event Type";
 	let descriptionTitle = "Description Title";
 	let detailsTitle = "Event Details";
-	switch (eventType) {
+	switch (resource) {
 		case 'fiesta':
-			resource = 'party';
+			// resource = 'party';
 			eventTypeDesc = "Musical Event";
 			descriptionTitle = "Don't Miss This Event";
 			detailsTitle = "Event details";
 			break;
 		case 'restaurante':
-			resource = 'restaurant';
+			// resource = 'restaurant';
 			eventTypeDesc = "Restaurant";
 			descriptionTitle = "Don't Miss This Place";
 			detailsTitle = "Place details";
 			break;
 		case 'diversion':
-			resource = 'diversion';
+			// resource = 'diversion';
 			eventTypeDesc = "Diversion Event";
 			descriptionTitle = "Don't Miss This Opportunity";
 			detailsTitle = "Event details";
 			break;
 		case 'discoteca':
-			resource = 'disco';
+			// resource = 'disco';
 			eventTypeDesc = "Disco place";
 			descriptionTitle = "Don't Miss This Amazing Time";
 			detailsTitle = "Disco details";
@@ -90,6 +112,7 @@ export const Event = () => {
 								<p><span>Min Age:</span> {minAge}</p>
 								<p><span>Parking:</span> {parking}</p>
 								<p><span>Contact:</span> {contact}</p>
+								<p><span>Cover:</span> {cover}</p>
 							</div>
 						</div>
 						<br /><br />

@@ -6,32 +6,32 @@
 
 /** GENERIC PARTY **/
 
-.parallax-party{
+.parallax-fiesta{
     color: #f8f8f8 !important;
     background: url("https://i.ibb.co/KsrDwb2/dj.jpg") no-repeat center center;
 }
 
-.details-party{
+.details-fiesta{
     color: #0e0e0e !important;
     background: url("https://i2.wp.com/files.123freevectors.com/wp-content/original/4329-dark-pink-bokeh-background.jpg?w=600") no-repeat center center;
 }
 
-.info-party{
+.info-fiesta{
     color: #0e0e0e !important;
 }
 
 /** GENERIC RESTAURANT **/
-.parallax-restaurant{
+.parallax-restaurante{
     color: #000000 !important;
     background: url("https://wallpaperaccess.com/full/3353899.jpg") no-repeat center center;
 }
 
-.details-restaurant{
+.details-restaurante{
     color: #020202 !important;
     background: url("https://img.freepik.com/free-photo/wooden-board-empty-table-top-blurred-background_1253-1584.jpg?t=st=1648623250~exp=1648623850~hmac=603407e4fe3c14d85eb90127f280e3dadcd46bed3198fa64e4a6122b704bcccb&w=996") no-repeat center center;
 }
 
-.info-restaurant{
+.info-restaurante{
     color: #0e0e0e !important;
 }
 
@@ -53,17 +53,17 @@
 
 /** GENERIC DISCO **/
 
-.parallax-disco{
+.parallax-discoteca{
     color: #000000 !important;
     background: url("https://cdn.pixabay.com/photo/2021/09/03/08/00/cd-6595247_960_720.jpg") no-repeat center center;
 }
 
-.details-disco{
+.details-discoteca{
     color: white !important;
     background: url("https://cdn.pixabay.com/photo/2018/02/26/10/12/christmas-3182684_960_720.jpg") no-repeat center center;
 }
 
-.info-disco{
+.info-discoteca{
     color: white !important;
 }
 

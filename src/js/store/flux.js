@@ -10,24 +10,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			token: sessionStorage.getItem("Token"),
 			events:[],
-			event: {
-				event_name: "",
-				local_name: "",
-				type_of_event: "",
-				description: "",
-				place: "",
-				date: "",
-				start_time: "",
-				end_time: "",
-				age: "",
-				parking: "",
-				number: "",
-				capacity: "",
-				photo: "",
-				location: "",
-				cover: "",
-				email: ""
-			}
+			eventDetails:"",
+			// event: {
+			// 	event_name: "",
+			// 	local_name: "",
+			// 	type_of_event: "",
+			// 	description: "",
+			// 	place: "",
+			// 	date: "",
+			// 	start_time: "",
+			// 	end_time: "",
+			// 	age: "",
+			// 	parking: "",
+			// 	number: "",
+			// 	capacity: "",
+			// 	photo: "",
+			// 	location: "",
+			// 	cover: "",
+			// 	email: ""
+			// }
 		},
 
 		actions: {
@@ -134,6 +135,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const body = await response.json();
 				setStore({
 					events: body,
+				});
+			},
+
+			getEventDetails: async(id) => {
+				const store = getStore();
+				const response = await fetch(
+					`${store.baseURL}/events/${id}`
+				);
+				const body = await response.json();
+				setStore({
+					eventDetails: body,
 				});
 			},
 		}
