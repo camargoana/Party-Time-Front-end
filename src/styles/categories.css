@@ -1,6 +1,6 @@
 #bg-categories{
     background-image: linear-gradient(to top left, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
-
+    background-size: cover;
 }
 .container-categories{
     font-family:Roboto,sans-serif;
