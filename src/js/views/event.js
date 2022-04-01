@@ -4,69 +4,78 @@ import "../../styles/event.css";
 import { useParams } from "react-router-dom";
 
 export const Event = () => {
-<<<<<<< HEAD
-	
-
-=======
+	const APP_TEST = true;
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect(() => {
 		if (params.id) {
 			actions.getEventDetails(params.id)
 		}
-	}, [])
->>>>>>> 1d1307e757c691fdf94943af03fa0145f44be315
-	// DATABASE INFO
-	// const eventType = "diversion";
-	// const eventName = "Event Name";
-	// const datetime = "April 21, 2022 - 8pm";
-	// const description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-	// 	+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-	// 	+ ", when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
-	// const capacity = "4.000 people";
-	// const minAge = "21 years old";
-	// const parking = "Yes, there is!";
-	// const contact = "(+58)000-00-00";
+	}, []);
 
-	const eventType = store.eventDetails.type_of_event;
-	const eventName = store.eventDetails.event_name;
-	const datetime = store.eventDetails.date;
-	const description = store.eventDetails.description;
-	const capacity = store.eventDetails.capacity;
-	const minAge = store.eventDetails.age;
-	const parking = store.eventDetails.parking;
-	const contact = store.eventDetails.number;
-	const cover = store.eventDetails.cover;
+	let resource;
+	let eventName;
+	let datetime;
+	let description;
+	let capacity;
+	let minAge;
+	let parking;
+	let contact;
+	let location;
+	let cover;
+
+	// DATABASE INFO
+	if(APP_TEST){
+		resource = "diversion";
+		eventName = "Nombre del Evento";
+		datetime = "21 Abril 2022 - 8pm";
+		description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+			+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+		 	+ ", when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+		capacity = "4.000 personas";
+		minAge = "21 años";
+		parking = "Sí hay";
+		contact = "(+58)000-00-00";
+		location = "Las Mercedes, Caracas"
+		cover = "Costo del evento"
+
+	}else{
+		resource = store.eventDetails.type_of_event;
+		eventName = store.eventDetails.event_name;
+		datetime = store.eventDetails.date;
+		description = store.eventDetails.description;
+		capacity = store.eventDetails.capacity;
+		minAge = store.eventDetails.age;
+		parking = store.eventDetails.parking;
+		contact = store.eventDetails.number;
+		location = store.eventDetails.location;
+		cover = store.eventDetails.cover;
+	}
 
 	// CALCULATED INFO
-	let resource = store.eventDetails.type_of_event;
-	let eventTypeDesc = "Event Type";
-	let descriptionTitle = "Description Title";
-	let detailsTitle = "Event Details";
+	let eventTypeDesc = "Tipo de Evento";
+	let descriptionTitle = "Título Descripción";
+	let detailsTitle = "Detalles del Evento";
 	switch (resource) {
 		case 'fiesta':
-			// resource = 'party';
-			eventTypeDesc = "Musical Event";
-			descriptionTitle = "Don't Miss This Event";
-			detailsTitle = "Event details";
+			eventTypeDesc = "Evento Musical";
+			descriptionTitle = "¡No te pierdas este evento!";
+			detailsTitle = "Detalles del Evento";
 			break;
 		case 'restaurante':
-			// resource = 'restaurant';
-			eventTypeDesc = "Restaurant";
-			descriptionTitle = "Don't Miss This Place";
-			detailsTitle = "Place details";
+			eventTypeDesc = "Restaurante";
+			descriptionTitle = "¡No te pierdas este lugar!";
+			detailsTitle = "Detalles del Lugar";
 			break;
 		case 'diversion':
-			// resource = 'diversion';
-			eventTypeDesc = "Diversion Event";
-			descriptionTitle = "Don't Miss This Opportunity";
-			detailsTitle = "Event details";
+			eventTypeDesc = "Diversión";
+			descriptionTitle = "¡No te pierdas esta oportunidad!";
+			detailsTitle = "Detalles del Evento";
 			break;
 		case 'discoteca':
-			// resource = 'disco';
-			eventTypeDesc = "Disco place";
-			descriptionTitle = "Don't Miss This Amazing Time";
-			detailsTitle = "Disco details";
+			eventTypeDesc = "Discoteca";
+			descriptionTitle = "¡No te pierdas esta maravilla!";
+			detailsTitle = "Detalles de la Disco";
 			break;
 	}
 
@@ -105,14 +114,15 @@ export const Event = () => {
 								<img className="img-fluid" src="https://images.squarespace-cdn.com/content/v1/551e1babe4b0aa77af01e45f/1429734404086-OAWOO1Y07LMCDBF859MR/San_Diego_Event_Dj_David_Cutler.jpg?format=1500w" />
 							</div>
 							<div className={`col-12 col-lg-6 mt-5 px-5 info-detail info-${resource}`} >
-								<p><span>Type:</span> {eventTypeDesc}</p>
-								<p><span>Title:</span> {eventName}</p>
-								<p><span>Datetime:</span> {datetime}</p>
-								<p><span>Capacity:</span> {capacity}</p>
-								<p><span>Min Age:</span> {minAge}</p>
-								<p><span>Parking:</span> {parking}</p>
-								<p><span>Contact:</span> {contact}</p>
-								<p><span>Cover:</span> {cover}</p>
+								<p><span>Tipo:</span> {eventTypeDesc}</p>
+								<p><span>T&iacute;tulo:</span> {eventName}</p>
+								<p><span>Fecha y Hora:</span> {datetime}</p>
+								<p><span>Capacidad:</span> {capacity}</p>
+								<p><span>Edad M&iacute;nima:</span> {minAge}</p>
+								<p><span>Estacionamiento:</span> {parking}</p>
+								<p><span>Contacto:</span> {contact}</p>
+								<p><span>Ubicaci&oacute;n:</span> {location}</p>
+								<p><span>Costo:</span> {cover}</p>
 							</div>
 						</div>
 						<br /><br />
@@ -127,3 +137,28 @@ export const Event = () => {
 		</div>
 	)
 }
+
+
+function initMap(_lat, _lng) {
+	let mapDiv = document.getElementById('map');
+	if (!mapDiv) return;
+
+	let position = { lat: _lat, lng: _lng };
+	let mapOptions = {
+		center: position,
+		zoom: 17,
+		disableDefaultUI: true
+	};
+	let map = new google.maps.Map(mapDiv, mapOptions);
+
+	let marker = new google.maps.Marker({
+		map: map,
+		position: position,
+		draggable: false,
+		anchorPoint: new google.maps.Point(0, -29)
+	});
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	initMap(10.481229140990079,-66.8609878783568);
+});

@@ -21,13 +21,13 @@ export const Signup = () => {
             <div id="bg" style={{ backgroundImage: `url(${fondo})` }} >
                 <div className="container-signup container-form mb-5">
                     {/* <!---heading----> */}
-                    <header className="heading">Planea tu pr&oacute;ximo evento</header>
+                    <header className="heading">Crea tu usuario</header>
                     <br />
                     {/* <!---Form starting----> */}
                     <div className="row ">
                         {/* <!--- For Name----> */}
                         <div className="col-xs-8">
-                            <label className="labelInput">Name*</label>
+                            <label className="labelInput">Nombre</label>
                         </div>
                         <div className="col-xs-8 d-flex justify-content-center">
                             <input
@@ -53,7 +53,7 @@ export const Signup = () => {
                         <div className="col-sm-12">
                             <div className="row">
                                 <div className="col-xs-8">
-                                    <label className="labelInput" >Email*</label>
+                                    <label className="labelInput" >Correo electr&oacute;nico</label>
                                 </div>
                                 <div className="col-xs-8 d-flex justify-content-center textInput">
                                     <input
@@ -81,7 +81,7 @@ export const Signup = () => {
                         <div className="col-sm-12">
                             <div className="row">
                                 <div className="col-xs-8">
-                                    <label className="labelInput">Password*</label>
+                                    <label className="labelInput">Contraseña</label>
                                 </div>
                                 <div className="col-xs-8 d-flex justify-content-center textInput">
                                     <input
@@ -107,7 +107,7 @@ export const Signup = () => {
                         <div className="col-sm-12">
                             <div className="row">
                                 <div className="col-12">
-                                    <label className="labelInput">Type of user</label>
+                                    <label className="labelInput">Tipo de usuario</label>
                                 </div>
                                 <div className="col-12 radioLabel">
                                     <input
@@ -136,7 +136,7 @@ export const Signup = () => {
                                                 type_of_user: e.target.value
                                             });
                                         }}
-                                    />&nbsp;&nbsp;Commercial
+                                    />&nbsp;&nbsp;Comercial
                                 </div>
                             </div>
                             <div className="col-sm-12">
@@ -159,7 +159,7 @@ export const Signup = () => {
                                             type_of_user: ""
                                         })
                                     }}
-                                >Submit
+                                >Enviar
                                 </button>
                             </div>
                         </div>

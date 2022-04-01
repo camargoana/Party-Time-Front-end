@@ -20,14 +20,14 @@ export const Navbar = () => {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav ms-auto mb-2 mb-lg-0">
-						<a className="nav-link active" aria-current="page" href="#">Categories</a>
-						<a className="nav-link active" aria-current="page" href="#">Favorites</a>
-						<a className="nav-link active" aria-current="page" href="#">Services</a>
+						<a className="nav-link active" aria-current="page" href="#">Categor&iacute;as</a>
+						<a className="nav-link active" aria-current="page" href="#">Favoritos</a>
+						<a className="nav-link active" aria-current="page" href="#">Servicios</a>
 						<div>
 							{!store.token
 								? <div>
 									<Link to="/signin">
-										<button className="nav-links nav-links-btn" href="#">Sign In</button>
+										<button className="nav-links nav-links-btn" href="#">Ingresar</button>
 									</Link>
 								</div>
 								: <div>
@@ -40,7 +40,7 @@ export const Navbar = () => {
 											actions.deleteToken()
 											history.push("/")
 										}}
-									>Log Out</button>
+									>Cerrar Sesi&oiacute;n</button>
 								</div>
 							}
 						</div>
