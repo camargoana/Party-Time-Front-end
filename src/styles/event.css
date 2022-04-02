@@ -7,13 +7,14 @@
 /** GENERIC PARTY **/
 
 .parallax-fiesta{
-    color: #f8f8f8 !important;
-    background: url("https://i.ibb.co/KsrDwb2/dj.jpg") no-repeat center center;
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px #0e0e0e;
+    background: url("https://res.cloudinary.com/venezuela/image/upload/v1648840826/Evento/fiesta9_sdflbs.jpg") no-repeat center center;
 }
 
 .details-fiesta{
     color: #0e0e0e !important;
-    background: url("https://i2.wp.com/files.123freevectors.com/wp-content/original/4329-dark-pink-bokeh-background.jpg?w=600") no-repeat center center;
+    background: url("https://res.cloudinary.com/venezuela/image/upload/v1648786671/Evento/fiesta2_pfbvsx.jpg") no-repeat center center;
 }
 
 .info-fiesta{
@@ -23,28 +24,29 @@
 /** GENERIC RESTAURANT **/
 .parallax-restaurante{
     color: #000000 !important;
-    background: url("https://wallpaperaccess.com/full/3353899.jpg") no-repeat center center;
+    background: url("https://res.cloudinary.com/venezuela/image/upload/v1648786765/Evento/eventorestaurant_xvplo4.jpg") no-repeat center center;
 }
 
 .details-restaurante{
     color: #020202 !important;
-    background: url("https://img.freepik.com/free-photo/wooden-board-empty-table-top-blurred-background_1253-1584.jpg?t=st=1648623250~exp=1648623850~hmac=603407e4fe3c14d85eb90127f280e3dadcd46bed3198fa64e4a6122b704bcccb&w=996") no-repeat center center;
+    background: url("https://res.cloudinary.com/venezuela/image/upload/v1648787423/Evento/restaurante2_ctymah.webp") no-repeat center center;
 }
 
 .info-restaurante{
     color: #0e0e0e !important;
+    
 }
 
 /** GENERIC DIVERSION **/
 
 .parallax-diversion{
-    color: #000000 !important;
-    background: url("https://cdn.pixabay.com/photo/2013/04/11/19/46/building-102840_960_720.jpg") no-repeat center center;
+    color: #ffffff !important;
+    background: url("https://res.cloudinary.com/venezuela/image/upload/v1648834302/Evento/diversion4_k9pnp8.jpg") no-repeat center center;
 }
 
 .details-diversion{
-    color: #020202 !important;
-    background: url("https://cdn.pixabay.com/photo/2020/07/10/12/08/hot-air-balloon-5390487_960_720.jpg") no-repeat center center;
+    color: #000000 !important;
+    background: url("https://res.cloudinary.com/venezuela/image/upload/v1648834322/Evento/diversion5_ydrhwz.jpg") no-repeat center center;
 }
 
 .info-diversion{
@@ -54,21 +56,32 @@
 /** GENERIC DISCO **/
 
 .parallax-discoteca{
-    color: #000000 !important;
-    background: url("https://cdn.pixabay.com/photo/2021/09/03/08/00/cd-6595247_960_720.jpg") no-repeat center center;
+    color: white !important;
+    text-shadow: 2px 2px #0e0e0e;
+    background: url("https://res.cloudinary.com/venezuela/image/upload/v1648837236/Evento/disco6_qytvdn.png") no-repeat center center;
 }
 
 .details-discoteca{
-    color: white !important;
-    background: url("https://cdn.pixabay.com/photo/2018/02/26/10/12/christmas-3182684_960_720.jpg") no-repeat center center;
+    color: #000000!important;
+    background: url("https://res.cloudinary.com/venezuela/image/upload/v1648838050/Evento/fiesta7_cem1lt.jpg") no-repeat center center;
 }
 
 .info-discoteca{
-    color: white !important;
+    color: #000000 !important;
+    
 }
 
 
 /** GENERAL **/
+#mapContainer{
+    min-height: 400px;
+}
+
+#map{
+    height: 400px;
+    width: 100%;
+}
+
 .parallax{
     padding-top: 50px;
     padding-bottom: 50px;

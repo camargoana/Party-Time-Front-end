@@ -19,14 +19,14 @@ export const Signin = () => {
 			<div id="bg" style={{ backgroundImage: `url(${fondo})` }} >
 				<div className="container-home container-form mb-5">
 					{/* <!---heading----> */}
-					<header className="heading">Login</header>
+					<header className="heading">Ingresar</header>
 					<div>
 						<br />
 						{/* <!---Form starting----> */}
 						<div className="row ">
 							{/* <!--- For Name----> */}
 							<div className="col-xs-8">
-								<label className="labelInput">Email</label>
+								<label className="labelInput">Correo electr&oacute;nico </label>
 							</div>
 							<div className="col-xs-8 d-flex justify-content-center">
 								<input
@@ -50,7 +50,7 @@ export const Signin = () => {
 							<div className="col-sm-12">
 								<div className="row">
 									<div className="col-12">
-										<label className="labelInput">Password</label>
+										<label className="labelInput">Contraseña</label>
 									</div>
 									<div className="col-12 d-flex justify-content-center textInput">
 										<input
@@ -89,14 +89,14 @@ export const Signin = () => {
 												password: "",
 											})
 										}}
-									>Log In!</button>
+									>¡Iniciar sesi&oacute;n!</button>
 								</div>
 							</div>
 						</div>
 						<div className="row">
 							<div className="col-12 pt-4" >
-								<span className="labelInput">Does not have an account</span>
-								&nbsp;&nbsp;<Link to="/signup" >Create an account</Link>
+								<span className="labelInput">¿No tienes una cuenta?</span>
+								&nbsp;&nbsp;<Link to="/signup" >Reg&iacute;strate</Link>
 							</div>
 						</div>
 					</div>

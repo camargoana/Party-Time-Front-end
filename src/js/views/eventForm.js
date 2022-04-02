@@ -5,6 +5,30 @@ import "../../styles/eventForm.css";
 
 
 export const EventForm = () => {
+        
+    const [loading, setloading] = useState(false)
+    const[image,setImage]=useState("")
+
+const uploadImage = async e => {
+    const files = e.target.files 
+    const data = new FormData()
+    data.append('file',files[0])
+    data.append('upload_preset','pziiv0oe')
+    setloading(true)
+
+    const res= await fetch("https://api.cloudinary.com/v1_1/venezuela/image/upload",
+    {
+        method: 'POST',
+        body:data
+    })
+    const file = await res.json()
+    console.log(file)
+
+}
+
+
+
+
     const { store, actions } = useContext(Context);
     const history = useHistory()
     const [event, setEvent] = useState({
@@ -509,30 +533,32 @@ export const EventForm = () => {
                                     <div className="col-sm-6 form-group">
                                         <label>Imagen</label>
                                         <input
-                                            type="text"
-                                            placeholder="Enlace de la imagen..."
+                                            type="file"
+                                            name="file"
+                                            placeholder="Sube una imagen..."
                                             className="form-control name"
                                             value={event.photo}
-                                            onChange={(e) => {
-                                                setEvent({
-                                                    event_name: event.event_name,
-                                                    local_name: event.local_name,
-                                                    type_of_event: event.type_of_event,
-                                                    description: event.description,
-                                                    place: event.place,
-                                                    date: event.date,
-                                                    start_time: event.start_time,
-                                                    end_time: event.end_time,
-                                                    age: event.age,
-                                                    parking: event.parking,
-                                                    number: event.number,
-                                                    capacity: event.capacity,
-                                                    photo: e.target.value,
-                                                    location: event.location,
-                                                    cover: event.cover,
-                                                    email: event.email
-                                                })
-                                            }}
+                                            onChange={uploadImage}
+                                            // onChange={(e) => {
+                                            //     setEvent({
+                                            //         event_name: event.event_name,
+                                            //         local_name: event.local_name,
+                                            //         type_of_event: event.type_of_event,
+                                            //         description: event.description,
+                                            //         place: event.place,
+                                            //         date: event.date,
+                                            //         start_time: event.start_time,
+                                            //         end_time: event.end_time,
+                                            //         age: event.age,
+                                            //         parking: event.parking,
+                                            //         number: event.number,
+                                            //         capacity: event.capacity,
+                                            //         photo: e.target.value,
+                                            //         location: event.location,
+                                            //         cover: event.cover,
+                                            //         email: event.email
+                                            //     })
+                                            // }}
                                         ></input>
                                     </div>
                                 </div>
