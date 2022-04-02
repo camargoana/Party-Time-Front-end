@@ -22,7 +22,7 @@ export const Card = ({event}) => {
                         {event.event_name}
                     </h5>
                     <p className="card-text">
-                        {event.description}
+                        {event.place}
                     </p>
                     <Link to = {`/event/${event.id}`} className="btn btn-info">
                         Find Out More!

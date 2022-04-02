@@ -27,18 +27,18 @@ export const Home = () => {
 								<p className="slider-text">REUNIDOS EN UN SOLO LUGAR</p>
 								<p className="mt-5">
 									<a className="btn btn-lg btn-success" href="#scrollToEvent">VER EVENTOS</a>&nbsp; &nbsp;
-									<a 
+									<a
 										className="btn btn-danger btn-lg"
-										onClick={(e)=>{
+										onClick={(e) => {
 											!store.token
-											? history.push("/signin")
-											: (
-												store.user.type_of_user == "comercial"
-												? history.push("/eventForm")
-												: alert("Debes registrarte como usuario comercial para poder crear y publicar tu evento")
-											)
+												? history.push("/signin")
+												: (
+													store.user.type_of_user == "comercial"
+														? history.push("/eventForm")
+														: alert("Debes registrarte como usuario comercial para poder crear y publicar tu evento")
+												)
 										}}
-										>PUBLICAR MI EVENTO</a>
+									>PUBLICAR MI EVENTO</a>
 								</p>
 							</div>
 						</div>
@@ -72,13 +72,14 @@ export const Home = () => {
 				</div>
 
 				{/* MAS VISTOS */}
-				<div className="row px-2 pb-5" id="fila-eventos">
+				<div className="d-flex flex-row container flex-wrap justify-content-around align-items-center pb-5" id="fila-eventos">
 					{/* MAPEO DE TODOS LOS EVENTOS EXISTENTES */}
-					<div className="d-flex flex-row flex-nowrap overflow-auto">
-						{store.events.map((event, index) => {
-							return <Card key={event.id} event={event} />
-						})}
-					</div>
+					{store.events.map((event, index) => {
+						return <Card key={event.id} event={event} className="card-event" />
+					})}
+					{/* <div className="">
+						
+					</div> */}
 					{/* <Card /> */}
 					{/* <div className="col-sm-3">
 						<div className="card">

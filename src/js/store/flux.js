@@ -8,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				password: "",
 				type_of_user: ""
 			},
-			token: sessionStorage.getItem("Token"),
+			token: "",
 			events:[],
 			eventDetails:"",
 			// event: {
