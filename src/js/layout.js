@@ -13,6 +13,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import ScrollToTop from "./component/scrollToTop";
 import { Categories } from "./views/categories";
+import { Profilecommercial } from "./views/profilecommercial";
 
 
 //create your first component
@@ -47,6 +48,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/categories">
 							<Categories />
+						</Route>
+						<Route exact path="/profilecommercial">
+							<Profilecommercial />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

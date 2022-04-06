@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/signup.css";
-import fondo from "../../img/fondo.jpg"
+import fondo from "../../img/fondo3.jpg"
 
 export const Signup = () => {
     const [user, setUser] = useState({
