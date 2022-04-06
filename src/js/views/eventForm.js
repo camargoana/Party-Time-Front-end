@@ -377,42 +377,38 @@ export const EventForm = () => {
                                             } else {
                                                 const imgUrl = await postPictureCloudinary();
                                                 console.log(imgUrl)
-                                                if (event.photo == "") {
-                                                    setEvent((prev) => ({
-                                                        ...prev,
-                                                        photo: imgUrl
-                                                    }))
-                                                } else {
-                                                    const eventCreated = await actions.createEvent(event);
-                                                    if (eventCreated == true) {
-                                                        actions.getEvents()
-                                                        history.push("/")
-                                                        alert("Evento creado con exito!")
-                                                    }
-                                                    else {
-                                                        alert("No se pudo crear el evento, revise los datos")
-                                                    }
-                                                    setEvent({
-                                                        event_name: "",
-                                                        local_name: "",
-                                                        type_of_event: "",
-                                                        description: "",
-                                                        place: "",
-                                                        date: "",
-                                                        start_time: "",
-                                                        end_time: "",
-                                                        age: "",
-                                                        parking: "",
-                                                        number: "",
-                                                        capacity: "",
-                                                        photo: "",
-                                                        location: "",
-                                                        cover: "",
-                                                        email: ""
-                                                    })
+                                                const eventCreated = await actions.createEvent({
+                                                    ...event, photo: imgUrl
+                                                });
+                                                if (eventCreated == true) {
+                                                    actions.getEvents()
+                                                    history.push("/")
+                                                    alert("Evento creado con exito!")
                                                 }
+                                                else {
+                                                    alert("No se pudo crear el evento, revise los datos")
+                                                }
+                                                setEvent({
+                                                    event_name: "",
+                                                    local_name: "",
+                                                    type_of_event: "",
+                                                    description: "",
+                                                    place: "",
+                                                    date: "",
+                                                    start_time: "",
+                                                    end_time: "",
+                                                    age: "",
+                                                    parking: "",
+                                                    number: "",
+                                                    capacity: "",
+                                                    photo: "",
+                                                    location: "",
+                                                    cover: "",
+                                                    email: ""
+                                                })
                                             }
-                                        }}
+                                        }
+                                        }
                                     >¡Crear Evento!</button>
                                 </div>
                             </div>
