@@ -32,6 +32,20 @@ const injectContext = PassedComponent => {
 			 *
 			 **/
 		state.actions.getEvents();
+		if (sessionStorage.getItem("Token")){
+			setState({
+				...state,
+				store: {...state.store, token: sessionStorage.getItem("Token")},
+				actions: {...state.actions}
+			})
+		}
+		if (sessionStorage.getItem("User")){
+			setState({
+				...state,
+				store: {...state.store, user: sessionStorage.getItem("User")},
+				actions: {...state.actions}
+			})
+		}
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,

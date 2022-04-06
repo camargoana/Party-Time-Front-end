@@ -13,7 +13,8 @@ export const Card = ({event}) => {
             <div className="card">
                 <img
                     className="card-img-top"
-                    src="https://i.ibb.co/QjGFFtK/disco-hands.jpg"
+                    // src="https://i.ibb.co/QjGFFtK/disco-hands.jpg"
+                    src={event.photo}
                     alt="Card image cap"
                     height={235}
                 />
@@ -22,7 +23,7 @@ export const Card = ({event}) => {
                         {event.event_name}
                     </h5>
                     <p className="card-text">
-                        {event.description}
+                        {event.place}
                     </p>
                     <Link to = {`/event/${event.id}`} className="btn btn-info">
                         Find Out More!

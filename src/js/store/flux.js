@@ -8,9 +8,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				password: "",
 				type_of_user: ""
 			},
-			token: sessionStorage.getItem("Token"),
-			events:[],
-			eventDetails:"",
+			token: "",
+			events: [],
+			eventDetails: "",
 			// event: {
 			// 	event_name: "",
 			// 	local_name: "",
@@ -88,6 +88,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 			},
 
+			deleteUser: () => {
+				sessionStorage.removeItem("User")
+				setStore({
+					user: {
+						name: "",
+						email: "",
+						password: "",
+						type_of_user: ""
+					}
+				})
+			},
+
 			getUser: async () => {
 				const store = getStore();
 				const response = await fetch(
@@ -100,6 +112,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				);
 				const body = await response.json();
+				sessionStorage.setItem("User", {
+					name: body.name,
+					email: body.email,
+					id: body.id,
+					type_of_user: body.type_of_user
+				})
 				setStore({
 					user: body,
 				});
@@ -138,7 +156,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 
-			getEventDetails: async(id) => {
+			getEventDetails: async (id) => {
 				const store = getStore();
 				const response = await fetch(
 					`${store.baseURL}/events/${id}`

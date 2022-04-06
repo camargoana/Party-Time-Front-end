@@ -38,9 +38,10 @@ export const Navbar = () => {
 										className="nav-links nav-links-btn"
 										onClick={(e) => {
 											actions.deleteToken()
+											actions.deleteUser()
 											history.push("/")
 										}}
-									>Cerrar Sesi&oiacute;n</button>
+									>Cerrar Sesi&oacute;n</button>
 								</div>
 							}
 						</div>

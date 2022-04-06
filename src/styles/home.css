@@ -32,3 +32,9 @@
 .scroll-container {
     scroll-behavior: smooth;
 }
+
+.card{
+    background-color: white;
+    border: none;
+    margin: 10px;
+}
