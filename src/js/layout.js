@@ -7,6 +7,8 @@ import { Event } from "./views/event";
 import { Signin } from "./views/signin";
 import { Signup } from "./views/signup";
 import { EventForm } from "./views/eventForm";
+import { EventCategories } from "./views/eventCategories";
+import { Favorites } from "./views/favorites";
 import { Private } from "./views/private";
 
 import { Navbar } from "./component/navbar";
@@ -52,6 +54,12 @@ const Layout = () => {
 						<Route exact path="/profilecommercial">
 							<Profilecommercial />
 						</Route>
+						<Route exact path="/categories/:id">
+							<EventCategories />
+						</Route>	
+						<Route exact path="/favorites">
+							<Favorites />
+						</Route>	
 						<Route>
 							<h1>Not found!</h1>
 						</Route>

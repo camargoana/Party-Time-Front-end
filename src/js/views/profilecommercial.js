@@ -25,12 +25,12 @@ export const Profilecommercial = () => {
                                 <img className="img-fluid" style={shadow} src="https://res.cloudinary.com/venezuela/image/upload/v1649200856/Evento/pexels-photo-5082579_vxmsqn.webp" />
                             </div>
                             <div className='col-12 col-lg-6 mt-5 px-5 info-profile' >
-                                <p><span>- Identicaci&oacute;n comercial.</span></p>
-                                <p><span>- Detalles de tu comercio.</span></p>
-                                <p><span>- Identicaci&oacute;n de una persona responsable.</span></p>
-                                <p><span>- Imagen de tu comercio.</span></p>
-                                <p><span>- Medios de contacto.</span></p>
-                                <div className="btn btn-lg btn-profile ">¡Crea tu Perf&iacute;l Comercial!</div>
+                                <p><b><span>- Identicaci&oacute;n comercial.</span></b></p>
+                                <p><b><span>- Detalles de tu comercio.</span></b></p>
+                                <p><b><span>- Identicaci&oacute;n de una persona responsable.</span></b></p>
+                                <p><b><span>- Imagen de tu comercio.</span></b></p>
+                                <p><b><span>- Medios de contacto.</span></b></p>
+                                <div className="btn btn-lg btn-profile ">¡Crea tu Perfil Comercial!</div>
                             </div>
                         </div>
                         <br /><br />

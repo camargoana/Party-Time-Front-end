@@ -12,18 +12,18 @@ export const Categories = () => {
             </div>
                 <div className="row d-flex justify-content-center">
                     <div className="container-categories mx-3 col-sm-4 zoom party">
-                        <h1 className="center">FIESTAS</h1>
+                    <a href="/categories/:id"><h1 className="center">FIESTAS</h1></a>
                     </div>
                     <div className="container-categories mx-3 col-sm-4 zoom restaurant">
-                        <h1 className="center">RESTAURANTES</h1>
+                    <a href="/categories/:id"><h1 className="center">RESTAURANTES</h1></a>
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center">
                     <div className="container-categories mx-3 col-sm-4 zoom fun">
-                        <h1 className="center">DIVERSI&Oacute;N</h1>
+                    <a href="/categories/:id"><h1 className="center">DIVERSI&Oacute;N</h1></a>
                     </div>
                     <div className="container-categories mx-3 col-sm-4 zoom disco">
-                        <h1 className="center">DISCOTECAS</h1>
+                    <a href="/categories/:id"><h1 className="center">DISCOTECAS</h1></a>
                     </div>
                 </div>
             </div>
