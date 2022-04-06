@@ -4,7 +4,7 @@ import "../../styles/event.css";
 import { useParams } from "react-router-dom";
 
 export const Event = () => {
-	const APP_TEST = false;
+	const APP_TEST = true;
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect(() => {
