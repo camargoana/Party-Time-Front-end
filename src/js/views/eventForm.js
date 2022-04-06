@@ -3,32 +3,21 @@ import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/eventForm.css";
 
-
 export const EventForm = () => {
-        
-    const [loading, setloading] = useState(false)
-    const[image,setImage]=useState("")
-
-const uploadImage = async e => {
-    const files = e.target.files 
-    const data = new FormData()
-    data.append('file',files[0])
-    data.append('upload_preset','pziiv0oe')
-    setloading(true)
-
-    const res= await fetch("https://api.cloudinary.com/v1_1/venezuela/image/upload",
-    {
-        method: 'POST',
-        body:data
-    })
-    const file = await res.json()
-    console.log(file)
-
-}
-
-
-
-
+    const [cloudImage, setCloudImage] = useState("");
+    async function postPictureCloudinary() {
+        const formData = new FormData();
+        formData.append("file", cloudImage);
+        formData.append("upload_preset", "pziiv0oe");
+        const response = await fetch("https://api.cloudinary.com/v1_1/venezuela/image/upload", {
+            method: "POST",
+            body: formData
+        });
+        if (response.ok) {
+            const data = await response.json();
+            return data.url;
+        }
+    }
     const { store, actions } = useContext(Context);
     const history = useHistory()
     const [event, setEvent] = useState({
@@ -66,24 +55,10 @@ const uploadImage = async e => {
                                             className="form-control name"
                                             value={event.local_name}
                                             onChange={(e) => {
-                                                setEvent({
-                                                    event_name: event.event_name,
-                                                    local_name: e.target.value,
-                                                    type_of_event: event.type_of_event,
-                                                    description: event.description,
-                                                    place: event.place,
-                                                    date: event.date,
-                                                    start_time: event.start_time,
-                                                    end_time: event.end_time,
-                                                    age: event.age,
-                                                    parking: event.parking,
-                                                    number: event.number,
-                                                    capacity: event.capacity,
-                                                    photo: event.photo,
-                                                    location: event.location,
-                                                    cover: event.cover,
-                                                    email: event.email
-                                                })
+                                                setEvent((prev) => ({
+                                                    ...prev,
+                                                    local_name: e.target.value
+                                                }))
                                             }}
                                         ></input>
                                     </div>
@@ -95,29 +70,14 @@ const uploadImage = async e => {
                                             className="form-control name"
                                             value={event.event_name}
                                             onChange={(e) => {
-                                                setEvent({
-                                                    event_name: e.target.value,
-                                                    local_name: event.local_name,
-                                                    type_of_event: event.type_of_event,
-                                                    description: event.description,
-                                                    place: event.place,
-                                                    date: event.date,
-                                                    start_time: event.start_time,
-                                                    end_time: event.end_time,
-                                                    age: event.age,
-                                                    parking: event.parking,
-                                                    number: event.number,
-                                                    capacity: event.capacity,
-                                                    photo: event.photo,
-                                                    location: event.location,
-                                                    cover: event.cover,
-                                                    email: event.email
-                                                })
+                                                setEvent((prev) => ({
+                                                    ...prev,
+                                                    event_name: e.target.value
+                                                }))
                                             }}
                                         ></input>
                                     </div>
                                 </div>
-
                                 <div className="form-group mt-1">
                                     <label>Descripci&oacute;n</label>
                                     <textarea
@@ -126,28 +86,13 @@ const uploadImage = async e => {
                                         className="form-control description"
                                         value={event.description}
                                         onChange={(e) => {
-                                            setEvent({
-                                                event_name: event.event_name,
-                                                local_name: event.local_name,
-                                                type_of_event: event.type_of_event,
-                                                description: e.target.value,
-                                                place: event.place,
-                                                date: event.date,
-                                                start_time: event.start_time,
-                                                end_time: event.end_time,
-                                                age: event.age,
-                                                parking: event.parking,
-                                                number: event.number,
-                                                capacity: event.capacity,
-                                                photo: event.photo,
-                                                location: event.location,
-                                                cover: event.cover,
-                                                email: event.email
-                                            })
+                                            setEvent((prev) => ({
+                                                ...prev,
+                                                description: e.target.value
+                                            }))
                                         }}
                                     ></textarea>
                                 </div>
-
                                 <div className="row">
                                     <div className="col-sm-6 mt-1">
                                         <label>Tipo de evento</label>
@@ -182,29 +127,14 @@ const uploadImage = async e => {
                                             className="form-control name"
                                             value={event.place}
                                             onChange={(e) => {
-                                                setEvent({
-                                                    event_name: event.event_name,
-                                                    local_name: event.local_name,
-                                                    type_of_event: event.type_of_event,
-                                                    description: event.description,
-                                                    place: e.target.value,
-                                                    date: event.date,
-                                                    start_time: event.start_time,
-                                                    end_time: event.end_time,
-                                                    age: event.age,
-                                                    parking: event.parking,
-                                                    number: event.number,
-                                                    capacity: event.capacity,
-                                                    photo: event.photo,
-                                                    location: event.location,
-                                                    cover: event.cover,
-                                                    email: event.email
-                                                })
+                                                setEvent((prev) => ({
+                                                    ...prev,
+                                                    place: e.target.value
+                                                }))
                                             }}
                                         ></input>
                                     </div>
                                 </div>
-
                                 <div className="row">
                                     <div className="col-sm-4 form-group mt-1">
                                         <label>Fecha</label>
@@ -214,24 +144,10 @@ const uploadImage = async e => {
                                             className="form-control name"
                                             value={event.date}
                                             onChange={(e) => {
-                                                setEvent({
-                                                    event_name: event.event_name,
-                                                    local_name: event.local_name,
-                                                    type_of_event: event.type_of_event,
-                                                    description: event.description,
-                                                    place: event.place,
-                                                    date: e.target.value,
-                                                    start_time: event.start_time,
-                                                    end_time: event.end_time,
-                                                    age: event.age,
-                                                    parking: event.parking,
-                                                    number: event.number,
-                                                    capacity: event.capacity,
-                                                    photo: event.photo,
-                                                    location: event.location,
-                                                    cover: event.cover,
-                                                    email: event.email
-                                                })
+                                                setEvent((prev) => ({
+                                                    ...prev,
+                                                    date: e.target.value
+                                                }))
                                             }}
                                         ></input>
                                     </div>
@@ -243,24 +159,10 @@ const uploadImage = async e => {
                                             className="form-control name"
                                             value={event.start_time}
                                             onChange={(e) => {
-                                                setEvent({
-                                                    event_name: event.event_name,
-                                                    local_name: event.local_name,
-                                                    type_of_event: event.type_of_event,
-                                                    description: event.description,
-                                                    place: event.place,
-                                                    date: event.date,
-                                                    start_time: e.target.value,
-                                                    end_time: event.end_time,
-                                                    age: event.age,
-                                                    parking: event.parking,
-                                                    number: event.number,
-                                                    capacity: event.capacity,
-                                                    photo: event.photo,
-                                                    location: event.location,
-                                                    cover: event.cover,
-                                                    email: event.email
-                                                })
+                                                setEvent((prev) => ({
+                                                    ...prev,
+                                                    start_time: e.target.value
+                                                }))
                                             }}
                                         ></input>
                                     </div>
@@ -272,29 +174,14 @@ const uploadImage = async e => {
                                             className="form-control name"
                                             value={event.end_time}
                                             onChange={(e) => {
-                                                setEvent({
-                                                    event_name: event.event_name,
-                                                    local_name: event.local_name,
-                                                    type_of_event: event.type_of_event,
-                                                    description: event.description,
-                                                    place: event.place,
-                                                    date: event.date,
-                                                    start_time: event.start_time,
-                                                    end_time: e.target.value,
-                                                    age: event.age,
-                                                    parking: event.parking,
-                                                    number: event.number,
-                                                    capacity: event.capacity,
-                                                    photo: event.photo,
-                                                    location: event.location,
-                                                    cover: event.cover,
-                                                    email: event.email
-                                                })
+                                                setEvent((prev) => ({
+                                                    ...prev,
+                                                    end_time: e.target.value
+                                                }))
                                             }}
                                         ></input>
                                     </div>
                                 </div>
-
                                 <div className="row">
                                     <div className="col-sm-4">
                                         <div className="row">
@@ -307,24 +194,10 @@ const uploadImage = async e => {
                                                     name="parking"
                                                     value="yes"
                                                     onChange={(e) => {
-                                                        setEvent({
-                                                            event_name: event.event_name,
-                                                            local_name: event.local_name,
-                                                            type_of_event: event.type_of_event,
-                                                            description: event.description,
-                                                            place: event.place,
-                                                            date: event.date,
-                                                            start_time: event.start_time,
-                                                            end_time: event.end_time,
-                                                            age: event.age,
-                                                            parking: e.target.value,
-                                                            number: event.number,
-                                                            capacity: event.capacity,
-                                                            photo: event.photo,
-                                                            location: event.location,
-                                                            cover: event.cover,
-                                                            email: event.email
-                                                        })
+                                                        setEvent((prev) => ({
+                                                            ...prev,
+                                                            parking: e.target.value
+                                                        }))
                                                     }}
                                                 />&nbsp;&nbsp;Si
                                                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -333,24 +206,10 @@ const uploadImage = async e => {
                                                     name="parking"
                                                     value="no"
                                                     onChange={(e) => {
-                                                        setEvent({
-                                                            event_name: event.event_name,
-                                                            local_name: event.local_name,
-                                                            type_of_event: event.type_of_event,
-                                                            description: event.description,
-                                                            place: event.place,
-                                                            date: event.date,
-                                                            start_time: event.start_time,
-                                                            end_time: event.end_time,
-                                                            age: event.age,
-                                                            parking: e.target.value,
-                                                            number: event.number,
-                                                            capacity: event.capacity,
-                                                            photo: event.photo,
-                                                            location: event.location,
-                                                            cover: event.cover,
-                                                            email: event.email
-                                                        })
+                                                        setEvent((prev) => ({
+                                                            ...prev,
+                                                            parking: e.target.value
+                                                        }))
                                                     }}
                                                 />&nbsp;&nbsp;No
                                             </div>
@@ -367,24 +226,10 @@ const uploadImage = async e => {
                                                     name="age"
                                                     value="public"
                                                     onChange={(e) => {
-                                                        setEvent({
-                                                            event_name: event.event_name,
-                                                            local_name: event.local_name,
-                                                            type_of_event: event.type_of_event,
-                                                            description: event.description,
-                                                            place: event.place,
-                                                            date: event.date,
-                                                            start_time: event.start_time,
-                                                            end_time: event.end_time,
-                                                            age: e.target.value,
-                                                            parking: event.parking,
-                                                            number: event.number,
-                                                            capacity: event.capacity,
-                                                            photo: event.photo,
-                                                            location: event.location,
-                                                            cover: event.cover,
-                                                            email: event.email
-                                                        })
+                                                        setEvent((prev) => ({
+                                                            ...prev,
+                                                            age: e.target.value
+                                                        }))
                                                     }}
                                                 />&nbsp;&nbsp;Todo P&uacute;blico
                                                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -393,24 +238,10 @@ const uploadImage = async e => {
                                                     name="age"
                                                     value="+15"
                                                     onChange={(e) => {
-                                                        setEvent({
-                                                            event_name: event.event_name,
-                                                            local_name: event.local_name,
-                                                            type_of_event: event.type_of_event,
-                                                            description: event.description,
-                                                            place: event.place,
-                                                            date: event.date,
-                                                            start_time: event.start_time,
-                                                            end_time: event.end_time,
-                                                            age: e.target.value,
-                                                            parking: event.parking,
-                                                            number: event.number,
-                                                            capacity: event.capacity,
-                                                            photo: event.photo,
-                                                            location: event.location,
-                                                            cover: event.cover,
-                                                            email: event.email
-                                                        })
+                                                        setEvent((prev) => ({
+                                                            ...prev,
+                                                            age: e.target.value
+                                                        }))
                                                     }}
                                                 />&nbsp;&nbsp;+15
                                                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -419,24 +250,10 @@ const uploadImage = async e => {
                                                     name="age"
                                                     value="+18"
                                                     onChange={(e) => {
-                                                        setEvent({
-                                                            event_name: event.event_name,
-                                                            local_name: event.local_name,
-                                                            type_of_event: event.type_of_event,
-                                                            description: event.description,
-                                                            place: event.place,
-                                                            date: event.date,
-                                                            start_time: event.start_time,
-                                                            end_time: event.end_time,
-                                                            age: e.target.value,
-                                                            parking: event.parking,
-                                                            number: event.number,
-                                                            capacity: event.capacity,
-                                                            photo: event.photo,
-                                                            location: event.location,
-                                                            cover: event.cover,
-                                                            email: event.email
-                                                        })
+                                                        setEvent((prev) => ({
+                                                            ...prev,
+                                                            age: e.target.value
+                                                        }))
                                                     }}
                                                 />&nbsp;&nbsp;+18
                                                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -445,24 +262,10 @@ const uploadImage = async e => {
                                                     name="age"
                                                     value="+21"
                                                     onChange={(e) => {
-                                                        setEvent({
-                                                            event_name: event.event_name,
-                                                            local_name: event.local_name,
-                                                            type_of_event: event.type_of_event,
-                                                            description: event.description,
-                                                            place: event.place,
-                                                            date: event.date,
-                                                            start_time: event.start_time,
-                                                            end_time: event.end_time,
-                                                            age: e.target.value,
-                                                            parking: event.parking,
-                                                            number: event.number,
-                                                            capacity: event.capacity,
-                                                            photo: event.photo,
-                                                            location: event.location,
-                                                            cover: event.cover,
-                                                            email: event.email
-                                                        })
+                                                        setEvent((prev) => ({
+                                                            ...prev,
+                                                            age: e.target.value
+                                                        }))
                                                     }}
                                                 />&nbsp;&nbsp;+21
                                                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -470,7 +273,6 @@ const uploadImage = async e => {
                                         </div>
                                     </div>
                                 </div>
-
                                 <div className="row">
                                     <div className="col-sm-3 form-group">
                                         <label>Capacidad</label>
@@ -480,24 +282,10 @@ const uploadImage = async e => {
                                             className="form-control name"
                                             value={event.capacity}
                                             onChange={(e) => {
-                                                setEvent({
-                                                    event_name: event.event_name,
-                                                    local_name: event.local_name,
-                                                    type_of_event: event.type_of_event,
-                                                    description: event.description,
-                                                    place: event.place,
-                                                    date: event.date,
-                                                    start_time: event.start_time,
-                                                    end_time: event.end_time,
-                                                    age: event.age,
-                                                    parking: event.parking,
-                                                    number: event.number,
-                                                    capacity: e.target.value,
-                                                    photo: event.photo,
-                                                    location: event.location,
-                                                    cover: event.cover,
-                                                    email: event.email
-                                                })
+                                                setEvent((prev) => ({
+                                                    ...prev,
+                                                    capacity: e.target.value
+                                                }))
                                             }}
                                         ></input>
                                     </div>
@@ -509,57 +297,26 @@ const uploadImage = async e => {
                                             className="form-control name"
                                             value={event.cover}
                                             onChange={(e) => {
-                                                setEvent({
-                                                    event_name: event.event_name,
-                                                    local_name: event.local_name,
-                                                    type_of_event: event.type_of_event,
-                                                    description: event.description,
-                                                    place: event.place,
-                                                    date: event.date,
-                                                    start_time: event.start_time,
-                                                    end_time: event.end_time,
-                                                    age: event.age,
-                                                    parking: event.parking,
-                                                    number: event.number,
-                                                    capacity: event.capacity,
-                                                    photo: event.photo,
-                                                    location: event.location,
-                                                    cover: e.target.value,
-                                                    email: event.email
-                                                })
+                                                setEvent((prev) => ({
+                                                    ...prev,
+                                                    cover: e.target.value
+                                                }))
                                             }}
                                         ></input>
                                     </div>
                                     <div className="col-sm-6 form-group">
                                         <label>Imagen</label>
-                                        <input
-                                            type="file"
-                                            name="file"
-                                            placeholder="Sube una imagen..."
-                                            className="form-control name"
-                                            value={event.photo}
-                                            onChange={uploadImage}
-                                            // onChange={(e) => {
-                                            //     setEvent({
-                                            //         event_name: event.event_name,
-                                            //         local_name: event.local_name,
-                                            //         type_of_event: event.type_of_event,
-                                            //         description: event.description,
-                                            //         place: event.place,
-                                            //         date: event.date,
-                                            //         start_time: event.start_time,
-                                            //         end_time: event.end_time,
-                                            //         age: event.age,
-                                            //         parking: event.parking,
-                                            //         number: event.number,
-                                            //         capacity: event.capacity,
-                                            //         photo: e.target.value,
-                                            //         location: event.location,
-                                            //         cover: event.cover,
-                                            //         email: event.email
-                                            //     })
-                                            // }}
-                                        ></input>
+                                        <label htmlFor="upload" className={cloudImage !== "" ? "custom-upload ready" : "custom-upload"}>
+                                            <input
+                                                className="add-product__field"
+                                                type="file"
+                                                id="upload"
+                                                onChange={async (event) => {
+                                                    setCloudImage(event.target.files[0]);
+                                                }}
+                                            />
+                                            {cloudImage !== "" ? "Imágen cargada" : "Agregar imágen"}
+                                        </label>
                                     </div>
                                 </div>
                                 <h1 className="center mt-2">Datos de contacto</h1>
@@ -572,24 +329,10 @@ const uploadImage = async e => {
                                         className="form-control"
                                         value={event.number}
                                         onChange={(e) => {
-                                            setEvent({
-                                                event_name: event.event_name,
-                                                local_name: event.local_name,
-                                                type_of_event: event.type_of_event,
-                                                description: event.description,
-                                                place: event.place,
-                                                date: event.date,
-                                                start_time: event.start_time,
-                                                end_time: event.end_time,
-                                                age: event.age,
-                                                parking: event.parking,
-                                                number: e.target.value,
-                                                capacity: event.capacity,
-                                                photo: event.photo,
-                                                location: event.location,
-                                                cover: event.cover,
-                                                email: event.email
-                                            })
+                                            setEvent((prev) => ({
+                                                ...prev,
+                                                number: e.target.value
+                                            }))
                                         }}
                                     ></input>
                                 </div>
@@ -601,24 +344,10 @@ const uploadImage = async e => {
                                         className="form-control"
                                         value={event.email}
                                         onChange={(e) => {
-                                            setEvent({
-                                                event_name: event.event_name,
-                                                local_name: event.local_name,
-                                                type_of_event: event.type_of_event,
-                                                description: event.description,
-                                                place: event.place,
-                                                date: event.date,
-                                                start_time: event.start_time,
-                                                end_time: event.end_time,
-                                                age: event.age,
-                                                parking: event.parking,
-                                                number: event.number,
-                                                capacity: event.capacity,
-                                                photo: event.photo,
-                                                location: event.location,
-                                                cover: event.cover,
+                                            setEvent((prev) => ({
+                                                ...prev,
                                                 email: e.target.value
-                                            })
+                                            }))
                                         }}
                                     ></input>
                                 </div>
@@ -627,33 +356,62 @@ const uploadImage = async e => {
                                         type="button"
                                         className="btn btn-lg btn-submit"
                                         onClick={async (e) => {
-                                            const eventCreated = await actions.createEvent(event);
-                                            if (eventCreated == true) {
-                                                actions.getEvents()
-                                                history.push("/")
-                                                alert("Evento creado con exito!")
+                                            if (
+                                                event.event_name == ""
+                                                // event.local_name == "" ||
+                                                // event.type_of_event == "" ||
+                                                // event.description == "" ||
+                                                // event.place == "" ||
+                                                // event.date == "" ||
+                                                // event.start_time == "" ||
+                                                // event.end_time == "" ||
+                                                // event.age == "" ||
+                                                // event.parking == "" ||
+                                                // event.number == "" ||
+                                                // event.capacity == "" ||
+                                                // event.photo == "" ||
+                                                // event.cover == "" ||
+                                                // event.email == ""
+                                            ) {
+                                                return alert("Verifique todos los campos")
+                                            } else {
+                                                const imgUrl = await postPictureCloudinary();
+                                                console.log(imgUrl)
+                                                if (event.photo == "") {
+                                                    setEvent((prev) => ({
+                                                        ...prev,
+                                                        photo: imgUrl
+                                                    }))
+                                                } else {
+                                                    const eventCreated = await actions.createEvent(event);
+                                                    if (eventCreated == true) {
+                                                        actions.getEvents()
+                                                        history.push("/")
+                                                        alert("Evento creado con exito!")
+                                                    }
+                                                    else {
+                                                        alert("No se pudo crear el evento, revise los datos")
+                                                    }
+                                                    setEvent({
+                                                        event_name: "",
+                                                        local_name: "",
+                                                        type_of_event: "",
+                                                        description: "",
+                                                        place: "",
+                                                        date: "",
+                                                        start_time: "",
+                                                        end_time: "",
+                                                        age: "",
+                                                        parking: "",
+                                                        number: "",
+                                                        capacity: "",
+                                                        photo: "",
+                                                        location: "",
+                                                        cover: "",
+                                                        email: ""
+                                                    })
+                                                }
                                             }
-                                            else {
-                                                alert("No se pudo crear el evento, revise los datos")
-                                            }
-                                            setEvent({
-                                                event_name: "",
-                                                local_name: "",
-                                                type_of_event: "",
-                                                description: "",
-                                                place: "",
-                                                date: "",
-                                                start_time: "",
-                                                end_time: "",
-                                                age: "",
-                                                parking: "",
-                                                number: "",
-                                                capacity: "",
-                                                photo: "",
-                                                location: "",
-                                                cover: "",
-                                                email: ""
-                                            })
                                         }}
                                     >¡Crear Evento!</button>
                                 </div>
@@ -661,8 +419,7 @@ const uploadImage = async e => {
                         </form>
                     </div>
                 </div>
-            </div>
-            </div>
-        
+            </div >
+        </div >
     )
 }

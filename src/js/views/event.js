@@ -4,7 +4,7 @@ import "../../styles/event.css";
 import { useParams } from "react-router-dom";
 
 export const Event = () => {
-	const APP_TEST = true;
+	const APP_TEST = false;
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect(() => {
@@ -25,13 +25,13 @@ export const Event = () => {
 	let cover;
 
 	// DATABASE INFO
-	if(APP_TEST){
+	if (APP_TEST) {
 		resource = "fiesta";
 		eventName = "Nombre del Evento";
 		datetime = "21 Abril 2022 - 8pm";
 		description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 			+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-		 	+ ", when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+			+ ", when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 		capacity = "4.000 personas";
 		minAge = "21 años";
 		parking = "Sí hay";
@@ -39,7 +39,7 @@ export const Event = () => {
 		location = "Las Mercedes, Caracas"
 		cover = "Costo del evento"
 
-	}else{
+	} else {
 		resource = store.eventDetails.type_of_event;
 		eventName = store.eventDetails.event_name;
 		datetime = store.eventDetails.date;
@@ -111,7 +111,11 @@ export const Event = () => {
 
 						<div className="row">
 							<div className="col-12 col-lg-6 mt-5 px-5">
-								<img className="img-fluid" src="https://images.squarespace-cdn.com/content/v1/551e1babe4b0aa77af01e45f/1429734404086-OAWOO1Y07LMCDBF859MR/San_Diego_Event_Dj_David_Cutler.jpg?format=1500w" />
+								<img
+									className="img-fluid"
+									// src="https://images.squarespace-cdn.com/content/v1/551e1babe4b0aa77af01e45f/1429734404086-OAWOO1Y07LMCDBF859MR/San_Diego_Event_Dj_David_Cutler.jpg?format=1500w"
+									src = {store.eventDetails.photo}
+									/>
 							</div>
 							<div className={`col-12 col-lg-6 mt-5 px-5 info-detail info-${resource}`} >
 								<p><span>Tipo:</span> {eventTypeDesc}</p>
@@ -122,7 +126,7 @@ export const Event = () => {
 								<p><span>Estacionamiento:</span> {parking}</p>
 								<p><span>Contacto:</span> {contact}</p>
 								<p><span>Ubicaci&oacute;n:</span> {location}</p>
-								<p><span>Costo:</span> {cover}</p>
+								<p><span>Entrada (cover):</span> {cover}</p>
 							</div>
 						</div>
 						<br /><br />
@@ -159,6 +163,6 @@ function initMap(_lat, _lng) {
 	});
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-	initMap(10.481229140990079,-66.8609878783568);
+document.addEventListener("DOMContentLoaded", function (event) {
+	initMap(10.481229140990079, -66.8609878783568);
 });
