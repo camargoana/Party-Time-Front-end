@@ -4,7 +4,7 @@ import "../../styles/event.css";
 import { useParams } from "react-router-dom";
 
 export const Event = () => {
-	const APP_TEST = true;
+	const APP_TEST = false;
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect(() => {
@@ -126,7 +126,7 @@ export const Event = () => {
 								<p><span>Estacionamiento:</span> {parking}</p>
 								<p><span>Contacto:</span> {contact}</p>
 								<p><span>Ubicaci&oacute;n:</span> {location}</p>
-								<p><span>Entrada (cover):</span> {cover}</p>
+								<p><span>Costo:</span> {cover}</p>
 							</div>
 						</div>
 						<br /><br />
