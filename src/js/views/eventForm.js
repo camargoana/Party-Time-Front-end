@@ -305,16 +305,21 @@ export const EventForm = () => {
                                         ></input>
                                     </div>
                                     <div className="col-sm-6 form-group">
-                                        <label>Imagen</label>
+                                        <label style={{marginBottom:"5px"}}>Imagen</label>
+                                        <br/>
                                         <label htmlFor="upload" className={cloudImage !== "" ? "custom-upload ready" : "custom-upload"}>
-                                            <input
-                                                className="add-product__field"
-                                                type="file"
-                                                id="upload"
-                                                onChange={async (event) => {
-                                                    setCloudImage(event.target.files[0]);
-                                                }}
-                                            />
+                                            <div className="position-relative overflow-hidden fileContainer">
+                                                <div className="btnFile">Seleccionar...</div>
+
+                                                <input
+                                                    className="add-product__field fileInput"
+                                                    type="file"
+                                                    id="upload"
+                                                    onChange={async (event) => {
+                                                        setCloudImage(event.target.files[0]);
+                                                    }}
+                                                />
+                                            </div>
                                             {cloudImage !== "" ? "Imágen cargada" : "Agregar imágen"}
                                         </label>
                                     </div>
