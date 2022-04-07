@@ -19,14 +19,17 @@ export const Card = ({event}) => {
                     height={235}
                 />
                 <div className="card-body">
-                    <h5 className="card-title">
+                    <h5 className="card-title pb-1">
                         {event.event_name}
                     </h5>
+                    <p className="card-text">
+                        {event.local_name}
+                    </p>
                     <p className="card-text">
                         {event.place}
                     </p>
                     <Link to = {`/event/${event.id}`} className="btn btn-info">
-                        Find Out More!
+                        ¡Ver más detalles!
                     </Link>
                 </div>
             </div>

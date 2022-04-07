@@ -1,8 +1,12 @@
 import React from "react";
 import "../../styles/profilecommercial.css";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 
 export const Profilecommercial = () => {
+    const history = useHistory()
+
     const description = "Da más visibilidad a tus eventos y aumenta tus ventas. La manera más efectiva de vender tus eventos online";
 	const descriptionTitle = "Efectividad y eficiencia";
 	const pageTitle = "¿Qué necesitas para afiliarte?";
@@ -30,7 +34,7 @@ export const Profilecommercial = () => {
                                 <p><b><span>- Identicaci&oacute;n de una persona responsable.</span></b></p>
                                 <p><b><span>- Imagen de tu comercio.</span></b></p>
                                 <p><b><span>- Medios de contacto.</span></b></p>
-                                <div className="btn btn-lg btn-profile ">¡Crea tu Perfil Comercial!</div>
+                                <div className="btn btn-lg btn-profile" onClick={(e)=>{history.push("/signup")}}>¡Crea tu Perfil Comercial!</div>
                             </div>
                         </div>
                         <br /><br />

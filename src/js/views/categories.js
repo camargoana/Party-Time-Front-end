@@ -1,29 +1,30 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "../../styles/categories.css";
 
 export const Categories = () => {
+    const history = useHistory()
 
     return (
         <div>
-            
             <div className="py-5" id="bg-categories">
-            <div>
-                <h2 id='categories-title'>CATEGOR&Iacute;AS</h2>
-            </div>
+                <div>
+                    <h2 id='categories-title'>CATEGOR&Iacute;AS</h2>
+                </div>
                 <div className="row d-flex justify-content-center">
-                    <div className="container-categories mx-3 col-sm-4 zoom party">
-                    <a id='anchor-categories' href="/partycategorie"><h1 className="center">FIESTAS</h1></a>
+                    <div className="container-categories mx-3 col-sm-4 zoom party" onClick={(e)=>{history.push("/partycategorie")}}>
+                        <a id='anchor-categories'><h1 className="center">FIESTAS</h1></a>
                     </div>
-                    <div className="container-categories mx-3 col-sm-4 zoom restaurant">
-                    <a id='anchor-categories' href="/restaurantcategorie"><h1 className="center">RESTAURANTES</h1></a>
+                    <div className="container-categories mx-3 col-sm-4 zoom restaurant" onClick={(e)=>{history.push("/restaurantcategorie")}}>
+                        <a id='anchor-categories'><h1 className="center">RESTAURANTES</h1></a>
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center">
-                    <div className="container-categories mx-3 col-sm-4 zoom fun">
-                    <a id='anchor-categories' href="/funcategorie"><h1 className="center">DIVERSI&Oacute;N</h1></a>
+                    <div className="container-categories mx-3 col-sm-4 zoom fun"  onClick={(e)=>{history.push("/funcategorie")}}>
+                        <a id='anchor-categories'><h1 className="center">DIVERSI&Oacute;N</h1></a>
                     </div>
-                    <div className="container-categories mx-3 col-sm-4 zoom disco">
-                    <a id='anchor-categories' href="/discocategorie"><h1 className="center">DISCOTECAS</h1></a>
+                    <div className="container-categories mx-3 col-sm-4 zoom disco"  onClick={(e)=>{history.push("/discocategorie")}}>
+                        <a id='anchor-categories'><h1 className="center">DISCOTECAS</h1></a>
                     </div>
                 </div>
             </div>

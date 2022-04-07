@@ -7,7 +7,6 @@ import { Event } from "./views/event";
 import { Signin } from "./views/signin";
 import { Signup } from "./views/signup";
 import { EventForm } from "./views/eventForm";
-import { EventCategories } from "./views/eventCategories";
 import { PartyCategorie } from "./views/partyCategorie";
 import { RestaurantCategorie } from "./views/restaurantCategorie";
 import { FunCategorie } from "./views/funCategorie";
@@ -57,9 +56,6 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/profilecommercial">
 							<Profilecommercial />
-						</Route>
-						<Route exact path="/categories/:id">
-							<EventCategories />
 						</Route>	
 						<Route exact path="/partycategorie">
 							<PartyCategorie />

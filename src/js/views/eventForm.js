@@ -224,7 +224,7 @@ export const EventForm = () => {
                                                 <input
                                                     type="radio"
                                                     name="age"
-                                                    value="public"
+                                                    value="Todo público"
                                                     onChange={(e) => {
                                                         setEvent((prev) => ({
                                                             ...prev,
