@@ -290,7 +290,7 @@ export const EventForm = () => {
                                         ></input>
                                     </div>
                                     <div className="col-sm-3 form-group">
-                                        <label>Cover ($)</label>
+                                        <label>Costo ($)</label>
                                         <input
                                             type="text"
                                             placeholder="Precio en $..."
