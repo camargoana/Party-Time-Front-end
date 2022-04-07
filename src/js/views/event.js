@@ -63,6 +63,7 @@ export const Event = () => {
 	let contact = store.eventDetails.number;
 	let location = store.eventDetails.location;
 	let cover = store.eventDetails.cover;
+	console.log(store.eventDetails);
 
 	// CALCULATED INFO
 	let eventTypeDesc = "Tipo de Evento";

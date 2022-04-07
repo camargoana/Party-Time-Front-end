@@ -41,7 +41,7 @@ export const Navbar = () => {
 											actions.deleteUser()
 											history.push("/")
 										}}
-									>Cerrar Sesi&oacute;n</button>
+									>Salir</button>
 								</div>
 							}
 						</div>

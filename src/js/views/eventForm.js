@@ -40,8 +40,8 @@ export const EventForm = () => {
     })
     return (
         <div className="py-5" id="bg-form">
-            <div className="container-form py-2">
-                <h1 className="center">Datos del Evento</h1>
+            <div className="container-form py-4">
+                <h1 className="center">Registra tu Evento</h1>
                 <div className="col-lg-12 well">
                     <div className="row">
                         <form>
@@ -324,14 +324,14 @@ export const EventForm = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <h1 className="center mt-2">Datos de contacto</h1>
-                                <p>Ingresa un n&uacute;mero de tel&eacute;fono y un correo electr&oacute;nico para que los asistentes puedan hacer reservaciones o aclarar cualquier duda.</p>
-                                <div className="form-group mt-1">
+                                <h1 className="center mt-4">Datos de contacto</h1>
+                                <p>Nuestros asesores te estaran contactando para aclarar dudas y formalizar reservaciones.</p>
+                                <div className="col-sm-8 form-group mt-1">
                                     <label>N&uacute;mero de contacto</label>
                                     <input
                                         type="text"
                                         placeholder="Ingresa n&uacute;mero de tel&eacute;fono..."
-                                        className="form-control"
+                                        className="form-control name"
                                         value={event.number}
                                         onChange={(e) => {
                                             setEvent((prev) => ({
@@ -341,12 +341,12 @@ export const EventForm = () => {
                                         }}
                                     ></input>
                                 </div>
-                                <div className="form-group mt-1">
+                                <div className="col-sm-8 form-group mt-1">
                                     <label>Correo electr&oacute;nico de contacto</label>
                                     <input
                                         type="text"
                                         placeholder="Ingresa correo electr&oacute;nico..."
-                                        className="form-control"
+                                        className="form-control name"
                                         value={event.email}
                                         onChange={(e) => {
                                             setEvent((prev) => ({
@@ -361,6 +361,7 @@ export const EventForm = () => {
                                         type="button"
                                         className="btn btn-lg btn-submit"
                                         onClick={async (e) => {
+                                            //console.log("TIPO "+event.type_of_event);
                                             if (
                                                 event.event_name == ""
                                                 // event.local_name == "" ||
