@@ -8,6 +8,10 @@ import { Signin } from "./views/signin";
 import { Signup } from "./views/signup";
 import { EventForm } from "./views/eventForm";
 import { EventCategories } from "./views/eventCategories";
+import { PartyCategorie } from "./views/partyCategorie";
+import { RestaurantCategorie } from "./views/restaurantCategorie";
+import { FunCategorie } from "./views/funCategorie";
+import { DiscoCategorie } from "./views/discoCategorie";
 import { Favorites } from "./views/favorites";
 import { Private } from "./views/private";
 
@@ -56,6 +60,18 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/categories/:id">
 							<EventCategories />
+						</Route>	
+						<Route exact path="/partycategorie">
+							<PartyCategorie />
+						</Route>	
+						<Route exact path="/restaurantcategorie">
+							<RestaurantCategorie />
+						</Route>	
+						<Route exact path="/funcategorie">
+							<FunCategorie />
+						</Route>	
+						<Route exact path="/discocategorie">
+							<DiscoCategorie />
 						</Route>	
 						<Route exact path="/favorites">
 							<Favorites />

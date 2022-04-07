@@ -1,6 +1,7 @@
 #bg-categories{
     background-image: linear-gradient(to top left, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
     background-size: cover;
+    min-height: 100vh;
 }
 .container-categories{
     font-family:Roboto,sans-serif;
@@ -60,10 +61,10 @@
     background-position: center;
 }
 
-a{
+#anchor-categories{
     text-decoration:none!important;
     color: white;
 }
-a:hover{
+#anchor-categories:hover{
     color: white;
 }

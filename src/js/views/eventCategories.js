@@ -19,7 +19,7 @@ export const EventCategories = () => {
 
 	// DATABASE INFO
 	if (APP_TEST) {
-		resource = "fiesta";
+		resource = "discoteca";
 		// 	eventName = "Nombre del Evento";
 		// 	datetime = "21 Abril 2022 - 8pm";
 		// 	description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
