@@ -61,7 +61,7 @@ export const Event = () => {
 	let minAge = store.eventDetails.age;
 	let parking = store.eventDetails.parking;
 	let contact = store.eventDetails.number;
-	let location = store.eventDetails.location;
+	let location = store.eventDetails.place;
 	let cover = store.eventDetails.cover;
 	console.log(store.eventDetails);
 
