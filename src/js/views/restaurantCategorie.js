@@ -10,7 +10,7 @@ export const RestaurantCategorie = () => {
 		if (event.type_of_event == 'restaurante') {
 			return event
 		} else {
-			"No hay eventos disponibles actualemnte de tipo Restaurante 😭"
+			"No hay eventos disponibles actualmente de tipo Diversión 😭"
 		}
 	})
 	return (

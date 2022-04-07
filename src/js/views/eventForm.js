@@ -50,6 +50,7 @@ export const EventForm = () => {
                                     <div className="col-sm-6 form-group mt-1">
                                         <label>Nombre del local</label>
                                         <input
+                                            maxLength={50}
                                             type="text"
                                             placeholder="Ingresa el nombre del local..."
                                             className="form-control name"
@@ -65,6 +66,7 @@ export const EventForm = () => {
                                     <div className="col-sm-6 form-group mt-1">
                                         <label>Nombre del evento</label>
                                         <input
+                                            maxLength={30}
                                             type="text"
                                             placeholder="Ingresa el nombre del evento..."
                                             className="form-control name"
@@ -81,6 +83,7 @@ export const EventForm = () => {
                                 <div className="form-group mt-1">
                                     <label>Descripci&oacute;n</label>
                                     <textarea
+                                        maxLength={120}
                                         placeholder="Agrega una breve descripci&oacute;n sobre tu evento..."
                                         rows="3"
                                         className="form-control description"
@@ -122,6 +125,7 @@ export const EventForm = () => {
                                     <div className="col-sm-6 form-group mt-1">
                                         <label>Lugar</label>
                                         <input
+                                            maxLength={30}
                                             type="text"
                                             placeholder="Ingresa el lugar del evento..."
                                             className="form-control name"
@@ -224,7 +228,7 @@ export const EventForm = () => {
                                                 <input
                                                     type="radio"
                                                     name="age"
-                                                    value="Todo público"
+                                                    value="+0"
                                                     onChange={(e) => {
                                                         setEvent((prev) => ({
                                                             ...prev,
@@ -278,6 +282,7 @@ export const EventForm = () => {
                                         <label>Capacidad</label>
                                         <input
                                             type="text"
+                                            maxLength={7}
                                             placeholder="# de personas permitidas..."
                                             className="form-control name"
                                             value={event.capacity}
@@ -293,6 +298,7 @@ export const EventForm = () => {
                                         <label>Costo ($)</label>
                                         <input
                                             type="text"
+                                            maxLength={4}
                                             placeholder="Precio en $..."
                                             className="form-control name"
                                             value={event.cover}
@@ -329,6 +335,7 @@ export const EventForm = () => {
                                 <div className="col-sm-8 form-group mt-1">
                                     <label>N&uacute;mero de contacto</label>
                                     <input
+                                        maxLength={13}
                                         type="text"
                                         placeholder="Ingresa n&uacute;mero de tel&eacute;fono..."
                                         className="form-control name"
@@ -344,6 +351,7 @@ export const EventForm = () => {
                                 <div className="col-sm-8 form-group mt-1">
                                     <label>Correo electr&oacute;nico de contacto</label>
                                     <input
+                                        maxLength={50}
                                         type="text"
                                         placeholder="Ingresa correo electr&oacute;nico..."
                                         className="form-control name"
@@ -361,7 +369,10 @@ export const EventForm = () => {
                                         type="button"
                                         className="btn btn-lg btn-submit"
                                         onClick={async (e) => {
-                                            //console.log("TIPO "+event.type_of_event);
+                                            console.log("/********* EVENTO **********/");
+                                            console.log(event);
+                                            console.log(JSON.stringify(event));
+                                            
                                             if (
                                                 event.event_name == ""
                                                 // event.local_name == "" ||

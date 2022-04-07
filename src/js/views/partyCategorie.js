@@ -10,7 +10,7 @@ export const PartyCategorie = () => {
 		if (event.type_of_event == 'fiesta') {
 			return event
 		} else {
-			"No hay eventos disponibles actualemnte de tipo Fiesta 😭"
+			"No hay eventos disponibles actualmente de tipo Diversión 😭"
 		}
 	})
 	return (

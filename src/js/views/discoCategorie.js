@@ -10,7 +10,7 @@ export const DiscoCategorie = () => {
 		if (event.type_of_event == 'discoteca') {
 			return event
 		} else {
-			"No hay eventos disponibles actualemnte de tipo Discoteca 😭"
+			"No hay eventos disponibles actualmente de tipo Diversión 😭"
 		}
 	})
 	return (

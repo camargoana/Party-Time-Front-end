@@ -10,7 +10,7 @@ export const FunCategorie = () => {
 		if (event.type_of_event == 'diversion') {
 			return event
 		} else {
-			"No hay eventos disponibles actualemente de tipo Diversión 😭"
+			"No hay eventos disponibles actualmente de tipo Diversión 😭"
 		}
 	})
 	return (

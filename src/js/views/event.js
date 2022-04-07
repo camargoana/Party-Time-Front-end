@@ -66,6 +66,7 @@ export const Event = () => {
 	console.log(store.eventDetails);
 
 	// CALCULATED INFO
+	let parkingText = parking==="yes"?"Sí":"No";
 	let eventTypeDesc = "Tipo de Evento";
 	let descriptionTitle = "Título Descripción";
 	let detailsTitle = "Detalles del Evento";
@@ -138,7 +139,7 @@ export const Event = () => {
 								<p><span>Hora de cierre:</span> {store.eventDetails.end_time}</p>
 								<p><span>Capacidad:</span> {capacity} personas</p>
 								<p><span>Edad M&iacute;nima:</span> {minAge}</p>
-								<p><span>Estacionamiento:</span> {parking}</p>
+								<p><span>Estacionamiento:</span> {parkingText}</p>
 								<p><span>Ubicaci&oacute;n:</span> {location}</p>
 								<p><span>Costo:</span> {cover} $</p>
 								<p><span>Contacto:</span> {contact} {store.eventDetails.email}</p>
