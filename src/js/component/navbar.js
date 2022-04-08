@@ -22,7 +22,7 @@ export const Navbar = () => {
 					<div className="navbar-nav ms-auto mb-2 mb-lg-0">
 						<a className="nav-link active" aria-current="page" onClick={(e)=>{history.push("/categories")}}>Categor&iacute;as</a>
 						<a className="nav-link active" aria-current="page" onClick={(e)=>{history.push("/favorites")}}>Favoritos</a>
-						<a className="nav-link active" aria-current="page" onClick={(e)=>{history.push("/profilecommercial")}}>Servicios</a>
+						<a className="nav-link active" aria-current="page" onClick={(e)=>{history.push("/services")}}>Servicios</a>
 						<div>
 							{!store.token
 								? <div>

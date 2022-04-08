@@ -8,13 +8,13 @@ export const Services = () => {
     const history = useHistory()
 
     const orgTitle = "Party Time";
-    const orgDescription = "Es un proyecto enfocado en la organización y publicación de fiestas, restaurantes, actividades recreativas y discotecas.";
+    const orgDescription = "Es un proyecto enfocado en la organización y publicación de fiestas, eventos en restaurantes, actividades recreativas y discotecas.";
 
     const descriptionTitle = "¿Por qué hacemos esto?";
-    const description = "Al igual que tú, nosotros también queremos asistir a lugares y eventos, ya sabes que puedes encontrarlo acá, sólo debes preguntarte cuando y con quién.";
+    const description = "Al igual que tú, nosotros también queremos asistir a fiestas y eventos, ya sabes que puedes encontrarlo acá, sólo debes preguntarte cuándo y dónde.";
 	
 	const userTitle = "¿Planeando un Evento?";
-    const userDescription = "Da más visibilidad a tus eventos y aumenta tus ventas. La manera más efectiva de vender tus eventos online";
+    const userDescription = "Da más visibilidad a tus eventos y aumenta tus ventas. ¡La manera más efectiva de vender tus eventos online es con nosotros!";
     
     return (
         <div>
@@ -25,7 +25,7 @@ export const Services = () => {
 						<h1 className="display-3 ms-5 fw-bold fst-italic">{orgTitle}</h1>
 						<h1 className="display-6 ms-5 fw-normal fst-italic">{orgDescription}</h1>
 						<br /><br />
-                        <div className="ms-5 btn btn-lg btn-register text-center" onClick={(e)=>{history.push("/categories")}}>Ver categorias</div><br/>
+                        <div className="ms-5 btn btn-lg btn-register text-center" onClick={(e)=>{history.push("/categories")}}>Ver categorías</div><br/>
 					</div>
 				</div>
 			</section>
@@ -49,10 +49,10 @@ export const Services = () => {
                         <br/>
                         <div className="row">
                             <div className='col-12 px-5 info-profile' >
-                                <p><b><span>1. Envia los siguientes documentos</span></b></p>
-                                <p><b><span>- Identicaci&oacute;n comercial.</span></b></p>
-                                <p><b><span>- Detalles de tu comercio.</span></b></p>
-                                <p><b><span>- Identicaci&oacute;n de una persona responsable.</span></b></p>
+                                <p><b><span>1. Envia los siguientes documentos a nuestro correo:</span></b></p>
+                                <p><b><span>  - Identificaci&oacute;n comercial.</span></b></p>
+                                <p><b><span>  - Detalles de tu comercio.</span></b></p>
+                                <p><b><span>  - Identificaci&oacute;n de una persona responsable.</span></b></p>
                                 <p><b><a href="mailTo:party.time.4geeks@gmail.com">party.time.4geeks@gmail.com</a></b></p>
                                 <div className="btn btn-lg btn-register text-left" onClick={(e)=>{history.push("/signup")}}>2. ¡Crea tu usuario!</div><br/>
                             </div>
