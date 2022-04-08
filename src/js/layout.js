@@ -18,7 +18,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import ScrollToTop from "./component/scrollToTop";
 import { Categories } from "./views/categories";
-import { Profilecommercial } from "./views/profilecommercial";
+import { Services } from "./views/services";
 
 
 //create your first component
@@ -54,8 +54,8 @@ const Layout = () => {
 						<Route exact path="/categories">
 							<Categories />
 						</Route>
-						<Route exact path="/profilecommercial">
-							<Profilecommercial />
+						<Route exact path="/services">
+							<Services />
 						</Route>	
 						<Route exact path="/partycategorie">
 							<PartyCategorie />
