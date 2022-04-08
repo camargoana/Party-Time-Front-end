@@ -13,45 +13,6 @@ export const Event = () => {
 		}
 	}, []);
 
-	// let resource;
-	// let eventName;
-	// let datetime;
-	// let description;
-	// let capacity;
-	// let minAge;
-	// let parking;
-	// let contact;
-	// let location;
-	// let cover;
-
-	// DATABASE INFO
-	// if (APP_TEST) {
-	// 	resource = "fiesta";
-	// 	eventName = "Nombre del Evento";
-	// 	datetime = "21 Abril 2022 - 8pm";
-	// 	description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-	// 		+ "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-	// 		+ ", when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
-	// 	capacity = "4.000 personas";
-	// 	minAge = "21 años";
-	// 	parking = "Sí hay";
-	// 	contact = "(+58)000-00-00";
-	// 	location = "Las Mercedes, Caracas"
-	// 	cover = "Costo del evento"
-
-	// } else {
-	// 	resource = store.eventDetails.type_of_event;
-	// 	eventName = store.eventDetails.event_name;
-	// 	datetime = store.eventDetails.date;
-	// 	description = store.eventDetails.description;
-	// 	capacity = store.eventDetails.capacity;
-	// 	minAge = store.eventDetails.age;
-	// 	parking = store.eventDetails.parking;
-	// 	contact = store.eventDetails.number;
-	// 	location = store.eventDetails.location;
-	// 	cover = store.eventDetails.cover;
-	// }
-
 	// DATABASE INFO
 	let resource = store.eventDetails.type_of_event;
 	let eventName = store.eventDetails.event_name;
@@ -63,7 +24,6 @@ export const Event = () => {
 	let contact = store.eventDetails.number;
 	let location = store.eventDetails.place;
 	let cover = store.eventDetails.cover;
-	console.log(store.eventDetails);
 
 	// CALCULATED INFO
 	let eventTypeDesc = "Tipo de Evento";
@@ -138,7 +98,7 @@ export const Event = () => {
 								<p><span>Hora de cierre:</span> {store.eventDetails.end_time}</p>
 								<p><span>Capacidad:</span> {capacity} personas</p>
 								<p><span>Edad M&iacute;nima:</span> {minAge}</p>
-								<p><span>Estacionamiento:</span> {parkingText}</p>
+								<p><span>Estacionamiento:</span> {parking}</p>
 								<p><span>Ubicaci&oacute;n:</span> {location}</p>
 								<p><span>Costo:</span> {cover} $</p>
 								<p><span>Contacto:</span> {contact} {store.eventDetails.email}</p>
