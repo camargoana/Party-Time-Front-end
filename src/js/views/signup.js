@@ -144,7 +144,15 @@ export const Signup = () => {
                                     className="btn btn-lg btn-submit"
                                     onClick={async (e) => {
                                         // console.log(user)
-                                        const userCreated = await actions.createUser(user);
+                                        if (
+                                            user.name == "" ||
+                                            user.email == "" ||
+                                            user.password == "" ||
+                                            user.type_of_user == ""
+                                        ){
+                                            return alert("Verifique todos los campos")
+                                        }else {
+                                            const userCreated = await actions.createUser(user);
                                         if (userCreated == true) {
                                             history.push("/signin")
                                             alert("Usuario creado con exito! Por favor inicia sesion")
@@ -158,6 +166,7 @@ export const Signup = () => {
                                             password: "",
                                             type_of_user: ""
                                         })
+                                        }
                                     }}
                                 >Enviar
                                 </button>

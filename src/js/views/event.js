@@ -66,7 +66,6 @@ export const Event = () => {
 	console.log(store.eventDetails);
 
 	// CALCULATED INFO
-	let parkingText = parking==="yes"?"Sí":"No";
 	let eventTypeDesc = "Tipo de Evento";
 	let descriptionTitle = "Título Descripción";
 	let detailsTitle = "Detalles del Evento";

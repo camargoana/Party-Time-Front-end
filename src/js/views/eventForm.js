@@ -196,7 +196,7 @@ export const EventForm = () => {
                                                 <input
                                                     type="radio"
                                                     name="parking"
-                                                    value="yes"
+                                                    value="Si"
                                                     onChange={(e) => {
                                                         setEvent((prev) => ({
                                                             ...prev,
@@ -208,7 +208,7 @@ export const EventForm = () => {
                                                 <input
                                                     type="radio"
                                                     name="parking"
-                                                    value="no"
+                                                    value="No"
                                                     onChange={(e) => {
                                                         setEvent((prev) => ({
                                                             ...prev,
@@ -298,7 +298,7 @@ export const EventForm = () => {
                                         <label>Costo ($)</label>
                                         <input
                                             type="text"
-                                            maxLength={4}
+                                            maxLength={10}
                                             placeholder="Precio en $..."
                                             className="form-control name"
                                             value={event.cover}
@@ -316,7 +316,6 @@ export const EventForm = () => {
                                         <label htmlFor="upload" className={cloudImage !== "" ? "custom-upload ready" : "custom-upload"}>
                                             <div className="position-relative overflow-hidden fileContainer">
                                                 <div className="btnFile">Seleccionar...</div>
-
                                                 <input
                                                     className="add-product__field fileInput"
                                                     type="file"
@@ -335,7 +334,7 @@ export const EventForm = () => {
                                 <div className="col-sm-8 form-group mt-1">
                                     <label>N&uacute;mero de contacto</label>
                                     <input
-                                        maxLength={13}
+                                        maxLength={30}
                                         type="text"
                                         placeholder="Ingresa n&uacute;mero de tel&eacute;fono..."
                                         className="form-control name"
@@ -368,27 +367,22 @@ export const EventForm = () => {
                                     <button
                                         type="button"
                                         className="btn btn-lg btn-submit"
-                                        onClick={async (e) => {
-                                            console.log("/********* EVENTO **********/");
-                                            console.log(event);
-                                            console.log(JSON.stringify(event));
-                                            
+                                        onClick={async (e) => {                                            
                                             if (
-                                                event.event_name == ""
-                                                // event.local_name == "" ||
-                                                // event.type_of_event == "" ||
-                                                // event.description == "" ||
-                                                // event.place == "" ||
-                                                // event.date == "" ||
-                                                // event.start_time == "" ||
-                                                // event.end_time == "" ||
-                                                // event.age == "" ||
-                                                // event.parking == "" ||
-                                                // event.number == "" ||
-                                                // event.capacity == "" ||
-                                                // event.photo == "" ||
-                                                // event.cover == "" ||
-                                                // event.email == ""
+                                                event.event_name == "" ||
+                                                event.local_name == "" ||
+                                                event.type_of_event == "" ||
+                                                event.description == "" ||
+                                                event.place == "" ||
+                                                event.date == "" ||
+                                                event.start_time == "" ||
+                                                event.end_time == "" ||
+                                                event.age == "" ||
+                                                event.parking == "" ||
+                                                event.number == "" ||
+                                                event.capacity == "" ||
+                                                event.cover == "" ||
+                                                event.email == ""
                                             ) {
                                                 return alert("Verifique todos los campos")
                                             } else {

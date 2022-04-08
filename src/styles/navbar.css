@@ -19,7 +19,10 @@
 .nav-link:hover{
     color:var(--brightyellow)!important;
     transition: all 0.2s ease-out;
+    cursor: pointer;
+
 }
+
 .nav-links-btn{
     background-color: transparent;
     padding: 10px 16px;
