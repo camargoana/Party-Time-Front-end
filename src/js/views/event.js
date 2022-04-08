@@ -11,6 +11,7 @@ export const Event = () => {
 		if (params.id) {
 			actions.getEventDetails(params.id)
 		}
+		initMap(10.481229140990079, -66.8609878783568);
 	}, []);
 
 	// DATABASE INFO
@@ -139,5 +140,5 @@ function initMap(_lat, _lng) {
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
-	initMap(10.481229140990079, -66.8609878783568);
+	//initMap(10.481229140990079, -66.8609878783568);
 });

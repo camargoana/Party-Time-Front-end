@@ -9,7 +9,7 @@ export const Card = ({event}) => {
     const history = useHistory();
 
     return (
-        <div className="col-sm-3">
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
             <div className="card">
                 <img
                     className="card-img-top"

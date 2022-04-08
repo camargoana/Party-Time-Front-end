@@ -39,7 +39,7 @@ export const Home = () => {
 				</div>
 
 				{/* LISTA DE EVENTOS */}
-				<div className="d-flex flex-row container flex-wrap justify-content-around align-items-center pb-5" id="fila-eventos">
+				<div className="row container-flex flex-wrap pb-5 container-events" id="fila-eventos">
 					{/* MAPEO DE TODOS LOS EVENTOS EXISTENTES */}
 					{store.events.map((event, index) => {
 						return <Card key={event.id} event={event} className="card-event" />

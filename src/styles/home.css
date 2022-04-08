@@ -35,7 +35,9 @@
     .home-caption {
         margin-top: 125px;
     }
-
+    .container-events{
+        padding: 0px 30px;
+    }
 }
 
 
@@ -68,7 +70,17 @@
 }
 
 
+@media screen and (min-width:1400px) { 
+    .container-events{
+        padding: 0px 100px;
+    }
+}
 
+@media screen and (min-width:1550px) { 
+    .container-events{
+        padding: 0px 200px;
+    }
+}
 
 #fila-eventos {
     margin: auto;

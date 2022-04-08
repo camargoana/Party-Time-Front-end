@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/home.css"; 
 import fondo from "../../img/intro.jpg"
 
 
@@ -37,8 +38,10 @@ export const Private = () => {
                         : //PERFIL DEL USUARIO COMERCIAL
                         <div className="container-fluid">
                             <h3>Por ser un perfil comercial puedes publicar tu evento en pocos segundos</h3>
-                            <div className="d-flex justify-content-center">
-                                <a className="btn btn-lg mt-1 btn-home btn-success" onClick={(e) => { history.push("/categories") }}>VER CATEGORÍAS</a>&nbsp; &nbsp;
+                            <div style={{ textAlign: "center" }} className="mt-3">
+                                <a className="btn btn-lg mt-1 btn-home btn-success" 
+                                    onClick={(e) => { history.push("/categories") }}>VER CATEGORÍAS</a>
+                                &nbsp; &nbsp;
                                 <a className="btn btn-lg mt-1 btn-home btn-danger"
                                     onClick={(e) => {
                                         !store.token
