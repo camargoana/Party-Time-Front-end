@@ -1,6 +1,6 @@
-#probando cambios
+#Party-time Front-end
 
-Creando carpeta ana
+Final Project Full Stack Web Developer HTML/CSS/Bootstrap/JS and React
 
 # Party Time APP!
 DESCRIPCION DE LA APP
